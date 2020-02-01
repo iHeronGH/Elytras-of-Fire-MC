@@ -1,0 +1,21 @@
+{
+	"values":[
+		"minecraft:grass",
+		"minecraft:tall_grass",
+		"minecraft:fire",
+		"minecraft:sweet_berry_bush",
+		"minecraft:snow",
+		"minecraft:torch",
+		"minecraft:wall_torch",
+		"minecraft:sugar_cane",
+		"#minecraft:underwater_bonemeals",
+		"#minecraft:saplings",
+		"#minecraft:rails",
+		"#minecraft:carpets",
+		"#minecraft:signs",
+		"#minecraft:standing_signs",
+		"#minecraft:banners",
+		"#minecraft:flowers",
+		"#ids-wings-of-fire:families/airs"
+	]
+}
