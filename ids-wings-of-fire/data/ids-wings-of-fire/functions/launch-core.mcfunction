@@ -5,5 +5,4 @@
 #Activates Datapack
 function ids-wings-of-fire:launch-required/generate-scoreboard
 function ids-wings-of-fire:launch-required/generate-teams
-function ids-wings-of-fire:launch-required/generate-timer
-function ids-wings-of-fire:launch-required/welcome
+#function ids-wings-of-fire:launch-required/welcome

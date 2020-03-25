@@ -3,9 +3,9 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Ready Overgrowth
-execute if entity @e[type=player,nbt={SelectedItem:{tag:{fertilize:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{growthactivate:1}}]}] run replaceitem entity @e[type=player,team=RainWings,nbt={SelectedItem:{tag:{fertilize:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{growthactivate:1}}]}] weapon.offhand minecraft:carrot_on_a_stick{growthactivate:1}
-execute if entity @e[type=player,nbt=!{SelectedItem:{tag:{fertilize:1}}}] run clear @e[type=player,nbt=!{SelectedItem:{tag:{fertilize:1}}}] minecraft:carrot_on_a_stick{growthactivate:1}
+execute if entity @s[scores={Activator=0},nbt={SelectedItem:{tag:{fertilize:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{growthactivate:1,activator:1}
+execute if entity @s[nbt=!{SelectedItem:{tag:{fertilize:1}}},nbt={Inventory:[{tag:{growthactivate:1}}]}] run clear @s carrot_on_a_stick{growthactivate:1}
 
 #Tag GrowthActive
-tag @e[type=player,team=RainWings,scores={RCGrowth=1..},tag=!GrowthActive,tag=!CoolDown2,nbt={Inventory:[{Slot:-106b,tag:{growthactivate:1}}]}] add GrowthActive
-execute if entity @e[type=player,team=RainWings,scores={RCGrowth=1..}] run scoreboard players set @e[type=player,team=RainWings,scores={RCGrowth=1..}] RCGrowth 0
+execute if entity @s[tag=!GrowthActive,tag=!CoolDown2,scores={RCGrowth=1..},nbt={SelectedItem:{tag:{fertilize:1}}}] run tag @s add GrowthActive
+execute if entity @s[scores={RCGrowth=1..}] run scoreboard players set @s RCGrowth 0

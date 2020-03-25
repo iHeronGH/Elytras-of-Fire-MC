@@ -3,11 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Effect Entities
-effect give @e[type=player,tag=!CoolDown2,tag=GrowthActive,nbt={SelectedItem:{tag:{fertilize:1}}}] minecraft:resistance 8 1 true
-execute as @e[type=player,tag=!CoolDown2,tag=GrowthActive,nbt={SelectedItem:{tag:{fertilize:1}}}] at @s run effect give @e[distance=0.75..5] minecraft:slowness 8 0 true
-execute as @e[type=player,tag=!CoolDown2,tag=GrowthActive,nbt={SelectedItem:{tag:{fertilize:1}}}] at @s run effect give @e[distance=0.75..5] minecraft:weakness 8 2 true
+execute if entity @s[tag=!CoolDown2] run effect give @s resistance 6 1 true
+execute at @s[tag=!CoolDown2] run effect give @e[distance=0.1..5] slowness 6 0 true
+execute at @s[tag=!CoolDown2] run effect give @e[distance=0.1..5] weakness 6 2 true
 
-#Remove Tag
-tag @e[type=player,tag=GrowthActive] add CoolDown2
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-two
-tag @e[type=player,tag=GrowthActive] add CoolDownActive2
+#Enter Cooldown
+tag @s add CoolDown2
+execute as @s[tag=!CoolDownActive2] run function ids-wings-of-fire:launch-add-ons/announce-cooldown-two
+tag @s add CoolDownActive2

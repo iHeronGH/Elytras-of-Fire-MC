@@ -3,9 +3,9 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Ready Serrated Strike
-execute if entity @e[type=player,nbt={SelectedItem:{tag:{sharpedge:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{strikeactivate:1}}]}] run replaceitem entity @e[type=player,team=IceWings,nbt={SelectedItem:{tag:{sharpedge:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{strikeactivate:1}}]}] weapon.offhand minecraft:carrot_on_a_stick{strikeactivate:1}
-execute if entity @e[type=player,nbt=!{SelectedItem:{tag:{sharpedge:1}}}] run clear @e[type=player,nbt=!{SelectedItem:{tag:{sharpedge:1}}}] minecraft:carrot_on_a_stick{strikeactivate:1}
+execute if entity @s[scores={Activator=0},nbt={SelectedItem:{tag:{sharpedge:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{strikeactivate:1,activator:1}
+execute if entity @s[nbt=!{SelectedItem:{tag:{sharpedge:1}}},nbt={Inventory:[{tag:{strikeactivate:1}}]}] run clear @s carrot_on_a_stick{strikeactivate:1}
 
 #Tag StrikeActive
-tag @e[type=player,team=IceWings,scores={RCStrike=1..},tag=!StrikeActive,tag=!CoolDown2,nbt={Inventory:[{Slot:-106b,tag:{strikeactivate:1}}]}] add StrikeActive
-execute if entity @e[type=player,team=IceWings,scores={RCStrike=1..}] run scoreboard players set @e[type=player,team=IceWings,scores={RCStrike=1..}] RCStrike 0
+execute if entity @s[tag=!StrikeActive,tag=!CoolDown2,scores={RCStrike=1..},nbt={SelectedItem:{tag:{sharpedge:1}}}] run tag @s add StrikeActive
+execute if entity @s[scores={RCStrike=1..}] run scoreboard players set @s RCStrike 0

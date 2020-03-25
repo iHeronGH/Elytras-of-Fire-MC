@@ -1,0 +1,49 @@
+{
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/mono/has-cd2"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2du1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2du2"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2el1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2el2"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2ai1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/duo/has-cd2ri1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/trio/has-cd2el1ai1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/trio/has-cd2el1ri1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/trio/has-cd2el2ai1"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ids-wings-of-fire:has-cd-upgrades/trio/has-cd2el2ri1"
+    }
+  ]
+}

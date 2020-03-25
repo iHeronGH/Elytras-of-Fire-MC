@@ -3,23 +3,23 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Tag Pyre
-execute if entity @e[type=player,team=MudWings,tag=!Pyre] run tag @e[type=player,team=MudWings,tag=!Pyre] add Pyre
-execute if entity @e[type=player,team=NightWings,tag=!Pyre] run tag @e[type=player,team=NightWings,tag=!Pyre] add Pyre
-execute if entity @e[type=player,team=SandWings,tag=!Pyre] run tag @e[type=player,team=SandWings,tag=!Pyre] add Pyre
-execute if entity @e[type=player,team=SkyWings,tag=!Pyre] run tag @e[type=player,team=SkyWings,tag=!Pyre] add Pyre
-execute if entity @e[type=player,team=IceWings,tag=Pyre] run tag @e[type=player,team=IceWings] remove Pyre
-execute if entity @e[type=player,team=RainWings,tag=Pyre] run tag @e[type=player,team=RainWings] remove Pyre
-execute if entity @e[type=player,team=SeaWings,tag=Pyre] run tag @e[type=player,team=SeaWings] remove Pyre
-execute if entity @e[type=player,team=,tag=Pyre] run tag @e[type=player,team=] remove Pyre
+execute if entity @s[team=MudWings,tag=!Pyre] run tag @s add Pyre
+execute if entity @s[team=NightWings,tag=!Pyre] run tag @s add Pyre
+execute if entity @s[team=SandWings,tag=!Pyre] run tag @s add Pyre
+execute if entity @s[team=SkyWings,tag=!Pyre] run tag @s add Pyre
+execute if entity @s[team=IceWings,tag=Pyre] run tag @s remove Pyre
+execute if entity @s[team=RainWings,tag=Pyre] run tag @s remove Pyre
+execute if entity @s[team=SeaWings,tag=Pyre] run tag @s remove Pyre
+execute if entity @s[team=,tag=Pyre] run tag @s remove Pyre
 
 #Tag Perma
-execute if entity @e[type=player,team=IceWings,tag=!Perma] run tag @e[type=player,team=IceWings,tag=!Perma] add Perma
-execute if entity @e[type=player,team=!IceWings,tag=Perma] run tag @e[type=player,team=!IceWings,tag=Perma] remove Perma
+execute if entity @s[team=IceWings,tag=!Perma] run tag @s add Perma
+execute if entity @s[team=!IceWings,tag=Perma] run tag @s remove Perma
 
 #Tag Potent
-execute if entity @e[type=player,team=RainWings,tag=!Potent] run tag @e[type=player,team=RainWings,tag=!Potent] add Potent
-execute if entity @e[type=player,team=!RainWings,tag=Potent] run tag @e[type=player,team=!RainWings,tag=Potent] remove Potent
+execute if entity @s[team=RainWings,tag=!Potent] run tag @s add Potent
+execute if entity @s[team=!RainWings,tag=Potent] run tag @s remove Potent
 
 #Tag Porous
-execute if entity @e[type=player,team=SeaWings,tag=!Porous] run tag @e[type=player,team=SeaWings,tag=!Porous] add Porous
-execute if entity @e[type=player,team=!SeaWings,tag=Porous] run tag @e[type=player,team=!SeaWings,tag=Porous] remove Porous
+execute if entity @s[team=SeaWings,tag=!Porous] run tag @s add Porous
+execute if entity @s[team=!SeaWings,tag=Porous] run tag @s remove Porous

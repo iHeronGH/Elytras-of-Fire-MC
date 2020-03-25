@@ -3,10 +3,9 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Effect All RainWings
-effect give @e[type=player,team=RainWings] minecraft:jump_boost 1 0 true
-effect give @e[type=player,team=RainWings,predicate=!ids-wings-of-fire:detect-sneak] minecraft:speed 1 1 true
-effect give @e[type=player,team=RainWings,predicate=ids-wings-of-fire:detect-sneak] minecraft:speed 1 2 true
-effect give @e[type=player,team=RainWings,predicate=ids-wings-of-fire:detect-sneak,nbt={OnGround:1b}] minecraft:invisibility 1 0 true
-
-#Clear Invisibility
-effect clear @e[type=player,team=RainWings,nbt={OnGround:0b}] minecraft:invisibility
+effect give @s jump_boost 1 0 true
+execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak] run effect give @s speed 1 1 true
+execute if entity @s[predicate=ids-wings-of-fire:detect-sneak] run effect give @s speed 1 2 true
+execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt={OnGround:1b}] run effect give @s invisibility 1 0 true
+execute if entity @s[nbt={OnGround:0b,ActiveEffects:[{Id:14b}]}] run effect clear @s invisibility
+execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={ActiveEffects:[{Id:14b}]}] run effect clear @s invisibility

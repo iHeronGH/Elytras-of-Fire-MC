@@ -2,15 +2,30 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase EternalFlame 2
-execute if entity @e[type=player,tag=EternalFlame2Purchase,tag=!EternalFlame2] run tellraw @e[type=player,tag=EternalFlame2Purchase,tag=!EternalFlame2] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Eternal Flame II","color":"red","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={EternalFlame2=1..},tag=EternalFlame1] run tag @s add EternalFlame2_T1AO
+execute if entity @s[scores={EternalFlame2=1..},tag=EternalFlame2] run tag @s add EternalFlame2_T2AO
+execute if score @s[scores={EternalFlame2=1..},tag=EternalFlame2_T1AO,tag=!EternalFlame2_T2AO] xp < t2 xp run tag @s add EternalFlame2_NEXp
+execute if entity @s[scores={EternalFlame2=1..},tag=EternalFlame1,tag=!EternalFlame2,tag=EternalFlame2_T1AO,tag=!EternalFlame2_T2AO,tag=!EternalFlame2_NEXp] if score @s xp >= t2 xp run tag @s add EternalFlame2_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=EternalFlame2Purchase,tag=EternalFlame2] run tellraw @p ["",{"text":"You already own ","color":"gray"},{"text":"Eternal Flame II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=EternalFlame2_T2AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"EternalFlame II","color":"red","bold":true},{"text":"!","color":"gray"}]
 
-#Tag EternalFlame2
-execute if entity @e[type=player,tag=EternalFlame2Purchase,tag=!EternalFlame2] run tag @e[type=player,tag=EternalFlame2Purchase,tag=!EternalFlame2] add EternalFlame2
+#Announce Not Enough XP
+execute if entity @s[tag=EternalFlame2_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=EternalFlame2] run tag @e[type=player,tag=EternalFlame2] remove EternalFlame2Purchase
-execute if entity @e[type=player,tag=EternalFlame2,tag=EternalFlame1] run tag @e[type=player,tag=EternalFlame2,tag=EternalFlame1] remove EternalFlame1
+#Announce Buy Previous Tier
+execute if entity @s[scores={EternalFlame2=1..},tag=!EternalFlame2_T1AO,tag=!EternalFlame2_T2AO] run tellraw @s ["",{"text":"You must buy the previous upgrade in order to purchase this!","color":"gray"}]
+
+#Purchase EternalFlame 2
+execute if entity @s[tag=EternalFlame2_temp] if score @s xp >= t2 xp run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"EternalFlame II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=EternalFlame2_temp] if score @s xp >= t2 xp run tag @s add EternalFlame2
+execute if entity @s[tag=EternalFlame2_temp,tag=EternalFlame2] if score @s xp >= t2 xp run xp add @s -450
+execute if entity @s[tag=EternalFlame2_temp,tag=EternalFlame2] if score @s xp >= t2 xp run tag @s remove EternalFlame1
+
+#Remove CheckTags
+tag @s[tag=EternalFlame2_T1AO] remove EternalFlame2_T1AO
+tag @s[tag=EternalFlame2_T2AO] remove EternalFlame2_T2AO
+tag @s[tag=EternalFlame2_NEXp] remove EternalFlame2_NEXp
+tag @s[tag=EternalFlame2_temp] remove EternalFlame2_temp
+scoreboard players set @s EternalFlame2 0
