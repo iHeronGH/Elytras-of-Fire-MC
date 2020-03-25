@@ -1,0 +1,8 @@
+#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Created by iDinoSoul
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+
+#Runs Help-Server
+scoreboard players enable @a help-server
+execute if entity @a[scores={help-server=1..}] run tellraw @a[scores={help-server=1..}] ["",{"text":"- ","color":"dark_gray","bold":true},{"text":"Help ","color":"yellow","bold":true},{"text":"-\n","color":"dark_gray","bold":true},{"text":"Hover over each section to view the commands!\n\n","color":"gray","bold":false},{"text":"- ","color":"dark_gray"},{"text":"Joining Tribes","color":"gold","clickEvent":{"action":"suggest_command","value":"/join "},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"/join IceWings\n"},{"text":"/join MudWings\n","color":"gold"},{"text":"/join NightWings\n","color":"dark_gray"},{"text":"/join RainWings\n","color":"green"},{"text":"/join SandWings\n","color":"yellow"},{"text":"/join SeaWings\n","color":"dark_aqua"},{"text":"/join SkyWings","color":"red"}]}}},{"text":"\n- ","color":"dark_gray"},{"text":"Upgrading Abilities","color":"gold","clickEvent":{"action":"suggest_command","value":"/upgrades"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"/upgrades\n"},{"text":"(Note: Hold the item you wish to upgrade\nin your main hand for this to work!)","color":"dark_gray"}]}}}]
+execute if entity @a[scores={help-server=1..}] run scoreboard players set @a[scores={help-server=1..}] help-server 0
