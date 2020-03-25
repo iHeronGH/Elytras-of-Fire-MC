@@ -1,0 +1,21 @@
+Heya! Dino here — you know, the creator of the datapack.
+
+On that note, if you are using the datapack for private use (singleplayer world,
+LAN world, etc.) it's all good! Just remember to let people know that I'm the
+creator... seeing as, well, I am!
+
+If you're gonna use it publicly, run it by me first, let me know what you're going
+to be doing, and I'll most likely say yes. However, you gotta remember to get my
+permission first, or else it is an automatic NO (capitals included!).
+
+Also, please don't tamper with any links in the files. Believe me: none of your
+friends are doing it, so it must not be cool, right? I don't want monetary profit
+from this project, so my links are how I benefit.
+
+Finally, if you are going to distribute my datapack, I can't stop you. Though, I
+would prefer you link people to the official download on Github, just so others
+can verify the download is safe to use. (If you didn't get this datapack directly
+from Github, don't unzip it! It might have scary stuff in it, and is likely NOT
+the official datapack.)
+
+Anyways, thanks for reading. Join our Discord if you'd like, and hope you enjoy!
