@@ -3,14 +3,24 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Runs Upgrades
-execute if entity @e[type=player,team=!] run scoreboard players enable @e[type=player,team=!] Upgrades
-execute if entity @e[type=player,team=IceWings] run function ids-wings-of-fire:loop-required/upgrades/icewing-upgrades
-execute if entity @e[type=player,team=MudWings] run function ids-wings-of-fire:loop-required/upgrades/mudwing-upgrades
-execute if entity @e[type=player,team=NightWings] run function ids-wings-of-fire:loop-required/upgrades/nightwing-upgrades
-execute if entity @e[type=player,team=RainWings] run function ids-wings-of-fire:loop-required/upgrades/rainwing-upgrades
-execute if entity @e[type=player,team=SandWings] run function ids-wings-of-fire:loop-required/upgrades/sandwing-upgrades
-execute if entity @e[type=player,team=SeaWings] run function ids-wings-of-fire:loop-required/upgrades/seawing-upgrades
-execute if entity @e[type=player,team=SkyWings] run function ids-wings-of-fire:loop-required/upgrades/skywing-upgrades
-execute if entity @e[type=player,team=!] run function ids-wings-of-fire:loop-required/upgrades/display-upgrade-gui
+scoreboard players enable @a[team=!] Upgrades
 
-execute if entity @e[type=player,scores={Upgrades=1..}] run scoreboard players set @e[type=player,scores={Upgrades=1..}] Upgrades 0
+#Generate Upgrades
+execute as @a[team=IceWings] run function ids-wings-of-fire:loop-required/upgrades/icewing-upgrades
+execute as @a[team=MudWings] run function ids-wings-of-fire:loop-required/upgrades/mudwing-upgrades
+execute as @a[team=NightWings] run function ids-wings-of-fire:loop-required/upgrades/nightwing-upgrades
+execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/upgrades/rainwing-upgrades
+execute as @a[team=SandWings] run function ids-wings-of-fire:loop-required/upgrades/sandwing-upgrades
+execute as @a[team=SeaWings] run function ids-wings-of-fire:loop-required/upgrades/seawing-upgrades
+execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/upgrades/skywing-upgrades
+
+#Display Upgrade GUIs
+execute as @a[team=!,scores={Upgrades=1..},nbt={SelectedItem:{tag:{primary:1}}}] run function ids-wings-of-fire:loop-required/upgrades/display-primary-upgrade-gui
+execute as @a[team=!,scores={Upgrades=1..},nbt={SelectedItem:{tag:{secondary:1}}}] run function ids-wings-of-fire:loop-required/upgrades/display-secondary-upgrade-gui
+
+#Warns
+execute as @a[team=,scores={Upgrades=1..}] run tellraw @s ["",{"text":"You are currently not a part of any tribes! Join a\ntribe before attempting to upgrade abilities.","color":"red","bold":true}]
+execute as @a[team=!,scores={Upgrades=1..},nbt=!{SelectedItem:{tag:{primary:1}}},nbt=!{SelectedItem:{tag:{secondary:1}}}] run tellraw @s ["",{"text":"Not an upgradable item/ability! Please try again with\na different ability.","color":"red","bold":true}]
+
+#Reset
+execute as @a[scores={Upgrades=1..}] run scoreboard players set @s Upgrades 0

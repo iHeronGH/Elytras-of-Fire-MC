@@ -3,27 +3,24 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Flame Breath
-execute if entity @e[type=player,tag=FlameActive,tag=!CoolDown1,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] at @e[type=player,tag=FlameActive,tag=!CoolDown1,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] run summon minecraft:area_effect_cloud ^ ^ ^10.5 {Tags:["FlameEnd"],Particle:"block air",Duration:0,Radius:0.05f}
-execute if entity @e[type=player,tag=FlameActive,tag=!CoolDown1,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] at @e[type=player,tag=FlameActive,tag=!CoolDown1,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] run summon minecraft:area_effect_cloud ~ ~1.2 ~ {Tags:["sky_cd1"],Particle:"block air",Duration:14,Radius:1f}
-execute if entity @e[tag=sky_cd1] run say sky_cd1
+execute if entity @s[tag=!CoolDown1,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sky_cd1"],Particle:"block air",Duration:14,Radius:1f}
 
-#Rotate FlameLine
-execute if entity @e[type=player,tag=FlameActive,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] at @e[type=player,tag=FlameActive,tag=Oxygenate1,tag=!Wildfire1,tag=!Blaze1] run tp @e[tag=sky_cd1,limit=1,sort=nearest] ~ ~ ~ facing entity @e[tag=FlameEnd,limit=1,distance=10.3..10.7,sort=nearest] eyes
+#Rotate sky_cd1
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
 
 #Play Particles
-execute as @e[tag=sky_cd1] at @s run particle minecraft:flame ~ ~0.6 ~ 0 0 0 0.02675 25 force
-execute as @e[tag=sky_cd1] at @s run particle minecraft:lava ~ ~0.3 ~ 0 0 0 0.01 2 force
-execute as @e[tag=sky_cd1] at @s run tp @s ^ ^ ^0.7
+execute at @e[type=area_effect_cloud,tag=sky_cd1] run function ids-wings-of-fire:loop-required/primaries/particles/flame-breath-parts
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s run tp @s ^ ^ ^0.7
 
 #Effect Entities
-execute as @e[tag=sky_cd1] at @s positioned ^ ^ ^0.95 run fill ^0.45 ^0.6 ^0.85 ^-0.45 ^0.45 ^0.7 minecraft:fire[age=15] replace #ids-wings-of-fire:families/airs
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s positioned ^ ^ ^0.7 run fill ^0.5 ^0.55 ^0.35 ^-0.5 ^ ^0.1 fire[age=15] replace #ids-wings-of-fire:families/airs
 
-#If Hit a Block or Hits Entity, kill FlameLine
-execute as @e[tag=sky_cd1] at @s unless block ^ ^0.8 ^ #ids-wings-of-fire:families/projectile-immune run kill @s
-execute as @e[tag=sky_cd1] at @s positioned ^ ^ ^0.5 if entity @e[type=!minecraft:area_effect_cloud,type=!item,distance=..0.8] run kill @s
-execute as @e[tag=sky_cd1] at @s run kill @e[type=arrow,distance=..1.875]
+#If Hit a Block or Hits Entity, kill sky_cd1
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s unless block ^ ^0.2 ^0.15 #ids-wings-of-fire:families/projectile-immune run kill @s
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,distance=..0.75] run kill @s
+execute as @e[type=area_effect_cloud,tag=sky_cd1] at @s run kill @e[type=arrow,distance=..1.875]
 
 #Enter Cooldown
-execute if entity @e[type=player,tag=FlameActive,tag=!CoolDown1] run tag @e[type=player,tag=FlameActive,tag=!CoolDown1] add CoolDown1
+tag @s[tag=!CoolDown1] add CoolDown1
 function ids-wings-of-fire:launch-add-ons/announce-cooldown-one
-execute if entity @e[type=player,tag=FlameActive,tag=!CoolDown1Active] run tag @e[type=player,tag=FlameActive,tag=!CoolDownActive1] add CoolDownActive1
+tag @s[tag=!CoolDownActive1] add CoolDownActive1

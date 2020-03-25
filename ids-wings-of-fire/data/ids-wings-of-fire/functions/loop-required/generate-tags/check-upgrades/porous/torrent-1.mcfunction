@@ -2,14 +2,24 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase Torrent 1
-execute if entity @e[type=player,tag=Torrent1Purchase,tag=!Torrent1] run tellraw @e[type=player,tag=Torrent1Purchase,tag=!Torrent1] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Torrent I","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={Torrent1=1..},tag=Torrent1] run tag @s add Torrent_T1AO
+execute if score @s[scores={Torrent1=1..},tag=!Torrent_T1AO] xp < t3 xp run tag @s add Torrent_NEXp
+execute if entity @s[scores={Torrent1=1..},tag=!Torrent1,tag=!Torrent_T1AO,tag=!Torrent_NEXp] if score @s xp >= t3 xp run tag @s add Torrent_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=Torrent1Purchase,tag=Torrent1] run tellraw @p ["",{"text":"You already own ","color":"gray"},{"text":"Torrent I","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Torrent_T1AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Torrent I","color":"aqua","bold":true},{"text":"!","color":"gray"}]
 
-#Tag Torrent1
-execute if entity @e[type=player,tag=Torrent1Purchase,tag=!Torrent1] run tag @e[type=player,tag=Torrent1Purchase,tag=!Torrent1] add Torrent1
+#Announce Not Enough XP
+execute if entity @s[tag=Torrent_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=Torrent1] run tag @e[type=player,tag=Torrent1] remove Torrent1Purchase
+#Purchase Torrent 1
+execute if entity @s[tag=Torrent_temp] run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Torrent I","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Torrent_temp] run tag @s add Torrent1
+execute if entity @s[tag=Torrent_temp,tag=Torrent1] run xp add @s -900
+
+#Remove CheckTags
+tag @s[tag=Torrent_T1AO] remove Torrent_T1AO
+tag @s[tag=Torrent_NEXp] remove Torrent_NEXp
+tag @s[tag=Torrent_temp] remove Torrent_temp
+scoreboard players set @s Torrent1 0

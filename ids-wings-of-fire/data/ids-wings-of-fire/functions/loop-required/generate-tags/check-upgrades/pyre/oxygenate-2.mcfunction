@@ -2,16 +2,33 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase Oxygenate 2
-execute if entity @e[type=player,tag=Oxygenate2Purchase,tag=!Oxygenate2,tag=!Oxygenate3] run tellraw @e[type=player,tag=Oxygenate2Purchase,tag=!Oxygenate2,tag=!Oxygenate3] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={Oxygenate2=1..},tag=Oxygenate1] run tag @s add Oxygenate2_T1AO
+execute if entity @s[scores={Oxygenate2=1..},tag=Oxygenate2] run tag @s add Oxygenate2_T2AO
+execute if entity @s[scores={Oxygenate2=1..},tag=Oxygenate3] run tag @s add Oxygenate2_T3AO
+execute if score @s[scores={Oxygenate2=1..},tag=Oxygenate2_T1AO,tag=!Oxygenate2_T2AO,tag=!Oxygenate2_T3AO] xp < t1 xp run tag @s add Oxygenate2_NEXp
+execute if entity @s[scores={Oxygenate2=1..},tag=Oxygenate1,tag=!Oxygenate2,tag=!Oxygenate3,tag=Oxygenate2_T1AO,tag=!Oxygenate2_T2AO,tag=!Oxygenate2_T3AO,tag=!Oxygenate2_NEXp] if score @s xp >= t1 xp run tag @s add Oxygenate2_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=Oxygenate2Purchase,tag=Oxygenate2] run tellraw @e[type=player,tag=Oxygenate2Purchase,tag=Oxygenate2] ["",{"text":"You already own ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @e[type=player,tag=Oxygenate2Purchase,tag=Oxygenate3] run tellraw @e[type=player,tag=Oxygenate2Purchase,tag=Oxygenate3] ["",{"text":"You already own ","color":"gray"},{"text":"Oxygenate III","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Oxygenate2_T2AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Oxygenate2_T3AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Oxygenate III","color":"red","bold":true},{"text":"!","color":"gray"}]
 
-#Tag Oxygenate2
-execute if entity @e[type=player,tag=Oxygenate2Purchase,tag=!Oxygenate2] run tag @e[type=player,tag=Oxygenate2Purchase,tag=!Oxygenate2] add Oxygenate2
+#Announce Not Enough XP
+execute if entity @s[tag=Oxygenate2_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=Oxygenate2] run tag @e[type=player,tag=Oxygenate2] remove Oxygenate2Purchase
-execute if entity @e[type=player,tag=Oxygenate2,tag=Oxygenate1] run tag @e[type=player,tag=Oxygenate2,tag=Oxygenate1] remove Oxygenate1
+#Announce Buy Previous Tier
+execute if entity @s[scores={Oxygenate2=1..},tag=!Oxygenate2_T1AO,tag=!Oxygenate2_T2AO,tag=!Oxygenate2_T3AO] run tellraw @s ["",{"text":"You must buy the previous upgrade in order to purchase this!","color":"gray"}]
+
+#Purchase Oxygenate 2
+execute if entity @s[tag=Oxygenate2_temp] run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Oxygenate2_temp] run tag @s add Oxygenate2
+execute if entity @s[tag=Oxygenate2_temp,tag=Oxygenate2] run xp add @s -300
+execute if entity @s[tag=Oxygenate2_temp,tag=Oxygenate2] run tag @s remove Oxygenate1
+
+#Remove CheckTags
+tag @s[tag=Oxygenate2_T1AO] remove Oxygenate2_T1AO
+tag @s[tag=Oxygenate2_T2AO] remove Oxygenate2_T2AO
+tag @s[tag=Oxygenate2_T3AO] remove Oxygenate2_T3AO
+tag @s[tag=Oxygenate2_NEXp] remove Oxygenate2_NEXp
+tag @s[tag=Oxygenate2_temp] remove Oxygenate2_temp
+scoreboard players set @s Oxygenate2 0

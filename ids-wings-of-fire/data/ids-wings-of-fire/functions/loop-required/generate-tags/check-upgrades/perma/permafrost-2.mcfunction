@@ -2,15 +2,30 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase Permafrost 2
-execute if entity @e[type=player,tag=Permafrost2Purchase,tag=!Permafrost2] run tellraw @e[type=player,tag=Permafrost2Purchase,tag=!Permafrost2] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={Permafrost2=1..},tag=Permafrost1] run tag @s add Permafrost2_T1AO
+execute if entity @s[scores={Permafrost2=1..},tag=Permafrost2] run tag @s add Permafrost2_T2AO
+execute if score @s[scores={Permafrost2=1..},tag=Permafrost2_T1AO,tag=!Permafrost2_T2AO] xp < t2 xp run tag @s add Permafrost2_NEXp
+execute if entity @s[scores={Permafrost2=1..},tag=Permafrost1,tag=!Permafrost2,tag=Permafrost2_T1AO,tag=!Permafrost2_T2AO,tag=!Permafrost2_NEXp] if score @s xp >= t2 xp run tag @s add Permafrost2_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=Permafrost2Purchase,tag=Permafrost2] run tellraw @p ["",{"text":"You already own ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Permafrost2_T2AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
 
-#Tag Permafrost2
-execute if entity @e[type=player,tag=Permafrost2Purchase,tag=!Permafrost2] run tag @e[type=player,tag=Permafrost2Purchase,tag=!Permafrost2] add Permafrost2
+#Announce Not Enough XP
+execute if entity @s[tag=Permafrost2_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=Permafrost2] run tag @e[type=player,tag=Permafrost2] remove Permafrost2Purchase
-execute if entity @e[type=player,tag=Permafrost2,tag=Permafrost1] run tag @e[type=player,tag=Permafrost2,tag=Permafrost1] remove Permafrost1
+#Announce Buy Previous Tier
+execute if entity @s[scores={Permafrost2=1..},tag=!Permafrost2_T1AO,tag=!Permafrost2_T2AO] run tellraw @s ["",{"text":"You must buy the previous upgrade in order to purchase this!","color":"gray"}]
+
+#Purchase Permafrost 2
+execute if entity @s[tag=Permafrost2_temp] if score @s xp >= t2 xp run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Permafrost2_temp] if score @s xp >= t2 xp run tag @s add Permafrost2
+execute if entity @s[tag=Permafrost2_temp,tag=Permafrost2] if score @s xp >= t2 xp run xp add @s -450
+execute if entity @s[tag=Permafrost2_temp,tag=Permafrost2] if score @s xp >= t2 xp run tag @s remove Permafrost1
+
+#Remove CheckTags
+tag @s[tag=Permafrost2_T1AO] remove Permafrost2_T1AO
+tag @s[tag=Permafrost2_T2AO] remove Permafrost2_T2AO
+tag @s[tag=Permafrost2_NEXp] remove Permafrost2_NEXp
+tag @s[tag=Permafrost2_temp] remove Permafrost2_temp
+scoreboard players set @s Permafrost2 0

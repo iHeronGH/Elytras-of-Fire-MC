@@ -3,15 +3,15 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Effect Entities
-effect give @e[type=player,tag=!CoolDown2,tag=StrikeActive,nbt={SelectedItem:{tag:{sharpedge:1}}}] minecraft:strength 8 2 true
-execute as @e[type=player,tag=!CoolDown2,tag=StrikeActive,nbt={SelectedItem:{tag:{sharpedge:1}}}] at @s unless block ~ ~-0.5 ~ #minecraft:ice unless block ~ ~-0.5 ~ minecraft:snow_block unless block ~ ~ ~ minecraft:snow run effect give @s minecraft:speed 8 0 true
+execute if entity @s[tag=!CoolDown2] run effect give @s strength 6 2 true
+execute at @s[tag=!CoolDown2] unless block ~ ~-0.51 ~ #ice unless block ~ ~-0.51 ~ snow_block unless block ~ ~ ~ snow run effect give @s speed 6 0 true
 
 #Effect on Snow/Ice
-execute as @e[type=player,tag=!CoolDown2,tag=StrikeActive,nbt={SelectedItem:{tag:{sharpedge:1}}}] at @s if block ~ ~-0.5 ~ #minecraft:ice run effect give @s minecraft:speed 8 2 true
-execute as @e[type=player,tag=!CoolDown2,tag=StrikeActive,nbt={SelectedItem:{tag:{sharpedge:1}}}] at @s if block ~ ~-0.5 ~ minecraft:snow_block run effect give @s minecraft:speed 8 2 true
-execute as @e[type=player,tag=!CoolDown2,tag=StrikeActive,nbt={SelectedItem:{tag:{sharpedge:1}}}] at @s if block ~ ~ ~ minecraft:snow run effect give @s minecraft:speed 8 2 true
+execute at @s[tag=!CoolDown2] if block ~ ~-0.5 ~ #ice run effect give @s speed 6 1 true
+execute at @s[tag=!CoolDown2] if block ~ ~-0.5 ~ snow_block run effect give @s speed 6 2 true
+execute at @s[tag=!CoolDown2] if block ~ ~ ~ snow run effect give @s speed 6 2 true
 
-#Remove Tag
-tag @e[type=player,tag=StrikeActive] add CoolDown2
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-two
-tag @e[type=player,tag=StrikeActive] add CoolDownActive2
+#Enter Cooldown
+tag @s add CoolDown2
+execute as @s[tag=!CoolDownActive2] run function ids-wings-of-fire:launch-add-ons/announce-cooldown-two
+tag @s add CoolDownActive2

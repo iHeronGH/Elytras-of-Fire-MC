@@ -2,16 +2,30 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase Scorch 1
-execute if entity @e[type=player,tag=Scorch1Purchase,tag=!Scorch1,tag=!Scorch2,tag=!Scorch3] run tellraw @e[type=player,tag=Scorch1Purchase,tag=!Scorch1,tag=!Scorch2,tag=!Scorch3] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={Scorch1=1..},tag=Scorch1] run tag @s add Scorch1_T1AO
+execute if entity @s[scores={Scorch1=1..},tag=Scorch2] run tag @s add Scorch1_T2AO
+execute if entity @s[scores={Scorch1=1..},tag=Scorch3] run tag @s add Scorch1_T3AO
+execute if score @s[scores={Scorch1=1..},tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO] xp < t1 xp run tag @s add Scorch1_NEXp
+execute if entity @s[scores={Scorch1=1..},tag=!Scorch1,tag=!Scorch2,tag=!Scorch3,tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO,tag=!Scorch1_NEXp] if score @s xp >= t1 xp run tag @s add Scorch1_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=Scorch1Purchase,tag=Scorch1] run tellraw @e[type=player,tag=Scorch1Purchase,tag=Scorch1] ["",{"text":"You already own ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @e[type=player,tag=Scorch1Purchase,tag=Scorch2] run tellraw @e[type=player,tag=Scorch1Purchase,tag=Scorch2] ["",{"text":"You already own ","color":"gray"},{"text":"Scorch II","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @e[type=player,tag=Scorch1Purchase,tag=Scorch3] run tellraw @e[type=player,tag=Scorch1Purchase,tag=Scorch3] ["",{"text":"You already own ","color":"gray"},{"text":"Scorch III","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T1AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T2AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T3AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch III","color":"red","bold":true},{"text":"!","color":"gray"}]
 
-#Tag Scorch1
-execute if entity @e[type=player,tag=Scorch1Purchase,tag=!Scorch1] run tag @e[type=player,tag=Scorch1Purchase,tag=!Scorch1] add Scorch1
+#Announce Not Enough XP
+execute if entity @s[tag=Scorch1_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=Scorch1] run tag @e[type=player,tag=Scorch1] remove Scorch1Purchase
+#Purchase Scorch 1
+execute if entity @s[tag=Scorch1_temp] run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_temp] run tag @s add Scorch1
+execute if entity @s[tag=Scorch1_temp,tag=Scorch1] run xp add @s -300
+
+#Remove CheckTags
+tag @s[tag=Scorch1_T1AO] remove Scorch1_T1AO
+tag @s[tag=Scorch1_T2AO] remove Scorch1_T2AO
+tag @s[tag=Scorch1_T3AO] remove Scorch1_T3AO
+tag @s[tag=Scorch1_NEXp] remove Scorch1_NEXp
+tag @s[tag=Scorch1_temp] remove Scorch1_temp
+scoreboard players set @s Scorch1 0

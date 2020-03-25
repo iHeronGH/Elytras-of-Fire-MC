@@ -2,14 +2,24 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Purchase Inferno 1
-execute if entity @e[type=player,tag=Inferno1Purchase,tag=!Inferno1] run tellraw @e[type=player,tag=Inferno1Purchase,tag=!Inferno1] ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Inferno I","color":"red","bold":true},{"text":"!","color":"gray"}]
+#Add CheckTags
+execute if entity @s[scores={Inferno1=1..},tag=Inferno1] run tag @s add Inferno_T1AO
+execute if score @s[scores={Inferno1=1..},tag=!Inferno_T1AO] xp < t3 xp run tag @s add Inferno_NEXp
+execute if entity @s[scores={Inferno1=1..},tag=!Inferno1,tag=!Inferno_T1AO,tag=!Inferno_NEXp] if score @s xp >= t3 xp run tag @s add Inferno_temp
 
 #Announce Tier Already Owned
-execute if entity @e[type=player,tag=Inferno1Purchase,tag=Inferno1] run tellraw @p ["",{"text":"You already own ","color":"gray"},{"text":"Inferno I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Inferno_T1AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Inferno I","color":"red","bold":true},{"text":"!","color":"gray"}]
 
-#Tag Inferno1
-execute if entity @e[type=player,tag=Inferno1Purchase,tag=!Inferno1] run tag @e[type=player,tag=Inferno1Purchase,tag=!Inferno1] add Inferno1
+#Announce Not Enough XP
+execute if entity @s[tag=Inferno_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
-#Remove Purchase Tag
-execute if entity @e[type=player,tag=Inferno1] run tag @e[type=player,tag=Inferno1] remove Inferno1Purchase
+#Purchase Inferno 1
+execute if entity @s[tag=Inferno_temp] run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Inferno I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Inferno_temp] run tag @s add Inferno1
+execute if entity @s[tag=Inferno_temp,tag=Inferno1] run xp add @s -900
+
+#Remove CheckTags
+tag @s[tag=Inferno_T1AO] remove Inferno_T1AO
+tag @s[tag=Inferno_NEXp] remove Inferno_NEXp
+tag @s[tag=Inferno_temp] remove Inferno_temp
+scoreboard players set @s Inferno1 0

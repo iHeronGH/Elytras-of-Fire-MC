@@ -3,9 +3,9 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Ready Terrashock
-execute if entity @e[type=player,nbt={SelectedItem:{tag:{crumble:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{shockactivate:1}}]}] run replaceitem entity @e[type=player,team=MudWings,nbt={SelectedItem:{tag:{crumble:1}}},nbt=!{Inventory:[{Slot:-106b,tag:{shockactivate:1}}]}] weapon.offhand minecraft:carrot_on_a_stick{shockactivate:1}
-execute if entity @e[type=player,nbt=!{SelectedItem:{tag:{crumble:1}}}] run clear @e[type=player,nbt=!{SelectedItem:{tag:{crumble:1}}}] minecraft:carrot_on_a_stick{shockactivate:1}
+execute if entity @s[scores={Activator=0},nbt={SelectedItem:{tag:{crumble:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{shockactivate:1,activator:1}
+execute if entity @s[nbt=!{SelectedItem:{tag:{crumble:1}}},nbt={Inventory:[{tag:{shockactivate:1}}]}] run clear @s carrot_on_a_stick{shockactivate:1}
 
 #Tag ShockActive
-tag @e[type=player,team=MudWings,scores={RCShock=1..},tag=!ShockActive,tag=!CoolDown2,nbt={Inventory:[{Slot:-106b,tag:{shockactivate:1}}]}] add ShockActive
-execute if entity @e[type=player,team=MudWings,scores={RCShock=1..}] run scoreboard players set @e[type=player,team=MudWings,scores={RCShock=1..}] RCShock 0
+execute if entity @s[tag=!ShockActive,tag=!CoolDown2,scores={RCShock=1..},nbt={SelectedItem:{tag:{crumble:1}}}] run tag @s add ShockActive
+execute if entity @s[scores={RCShock=1..}] run scoreboard players set @s RCShock 0

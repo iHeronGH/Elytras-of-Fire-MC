@@ -3,5 +3,5 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Effect All SkyWings
-effect give @e[type=player,team=SkyWings] minecraft:speed 1 2 true
-effect give @e[type=player,team=SkyWings] minecraft:strength 1 0 true
+effect give @s strength 1 0 true
+effect give @s speed 1 2 true

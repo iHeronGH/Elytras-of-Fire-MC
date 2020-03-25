@@ -2,66 +2,123 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
-#Generate Upgrades
+#Generate Scoreboard
+
+	#Essential Scoreboard
 scoreboard objectives add Upgrades trigger
-scoreboard players set @e[type=player] Upgrades 0
-
-#Generate help
 scoreboard objectives add help trigger
-scoreboard players set @e[type=player] help 0
+scoreboard objectives add help-server trigger
 
-#Generate Health
 scoreboard objectives add Health health
-scoreboard objectives setdisplay belowName Health
-
-#Generate Attack
 scoreboard objectives add Attack minecraft.custom:minecraft.damage_dealt
-scoreboard players set @e[type=player] Attack 0
 
-#Generate RCFlame
+	#Ability Usage Scoreboard
 scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Pyre] RCFlame 0
-
-#Generate RCFrost
 scoreboard objectives add RCFrost minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Perma] RCFrost 0
-
-#Generate RCVenom
 scoreboard objectives add RCVenom minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Potent] RCVenom 0
-
-#Generate RCOcean
 scoreboard objectives add RCOcean minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Porous] RCOcean 0
-
-#Generate RCSurge
 scoreboard objectives add RCSurge minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Pyre] RCSurge 0
-
-#Generate RCStrike
 scoreboard objectives add RCStrike minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Perma] RCStrike 0
-
-#Generate RCGrowth
 scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Potent] RCGrowth 0
-
-#Generate RCShock
 scoreboard objectives add RCShock minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Pyre] RCShock 0
-
-#Generate RCStorm
 scoreboard objectives add RCStorm minecraft.used:minecraft.carrot_on_a_stick
-scoreboard players set @e[type=player,tag=Pyre] RCStorm 0
 
-#Generate Primary
+	#Ability Slot Scoreboard
 scoreboard objectives add Primary dummy
-scoreboard players set @e[type=player] Primary 0
-
-#Generate Secondary
 scoreboard objectives add Secondary dummy
-scoreboard players set @e[type=player] Secondary 0
-
-#Generate Tertiary
 scoreboard objectives add Tertiary dummy
-scoreboard players set @e[type=player] Tertiary 0
+scoreboard objectives add Activator dummy
+
+	#XP Scoreboard
+scoreboard objectives add xp dummy
+scoreboard players set t1 xp 300
+scoreboard players set t2 xp 450
+scoreboard players set t3 xp 900
+scoreboard players set t4 xp 400
+scoreboard players set t5 xp 800
+
+	#Timer Scoreboard
+scoreboard objectives add timer dummy
+#scoreboard objectives setdisplay sidebar timer
+scoreboard players set t_sec timer 0
+scoreboard players set sec timer 0
+scoreboard players set min timer 0
+scoreboard players set hour timer 0
+
+	#Upgrade Scoreboard
+scoreboard objectives add ArcticCore1 trigger
+scoreboard objectives add ArcticCore2 trigger
+scoreboard objectives add ArcticCore3 trigger
+scoreboard objectives add Permafrost1 trigger
+scoreboard objectives add Permafrost2 trigger
+scoreboard objectives add Icefall1 trigger
+scoreboard objectives add FreezingPoint1 trigger
+scoreboard objectives add FreezingPoint2 trigger
+scoreboard objectives add Chill1 trigger
+scoreboard objectives add Chill2 trigger
+
+scoreboard objectives add Furnace1 trigger
+scoreboard objectives add Furnace2 trigger
+scoreboard objectives add Furnace3 trigger
+scoreboard objectives add Everburn1 trigger
+scoreboard objectives add Everburn2 trigger
+scoreboard objectives add Inferno1 trigger
+scoreboard objectives add Tremors1 trigger
+scoreboard objectives add Tremors2 trigger
+scoreboard objectives add Aftershock1 trigger
+scoreboard objectives add Aftershock2 trigger
+
+scoreboard objectives add Superheat1 trigger
+scoreboard objectives add Superheat2 trigger
+scoreboard objectives add Superheat3 trigger
+scoreboard objectives add EternalFlame1 trigger
+scoreboard objectives add EternalFlame2 trigger
+scoreboard objectives add Fission1 trigger
+scoreboard objectives add Corruption1 trigger
+scoreboard objectives add Corruption2 trigger
+scoreboard objectives add Blackout1 trigger
+scoreboard objectives add Blackout2 trigger
+
+scoreboard objectives add Reaction1 trigger
+scoreboard objectives add Reaction2 trigger
+scoreboard objectives add Reaction3 trigger
+scoreboard objectives add Noxious1 trigger
+scoreboard objectives add Noxious2 trigger
+scoreboard objectives add Potency1 trigger
+scoreboard objectives add Photosynthesis1 trigger
+scoreboard objectives add Photosynthesis2 trigger
+scoreboard objectives add NaturesWrath1 trigger
+scoreboard objectives add NaturesWrath2 trigger
+
+scoreboard objectives add Scorch1 trigger
+scoreboard objectives add Scorch2 trigger
+scoreboard objectives add Scorch3 trigger
+scoreboard objectives add Dehydrate1 trigger
+scoreboard objectives add Dehydrate2 trigger
+scoreboard objectives add Desolation1 trigger
+scoreboard objectives add HighWinds1 trigger
+scoreboard objectives add HighWinds2 trigger
+scoreboard objectives add Drought1 trigger
+scoreboard objectives add Drought2 trigger
+
+scoreboard objectives add HighTide1 trigger
+scoreboard objectives add HighTide2 trigger
+scoreboard objectives add HighTide3 trigger
+scoreboard objectives add Waterlogged1 trigger
+scoreboard objectives add Waterlogged2 trigger
+scoreboard objectives add Torrent1 trigger
+scoreboard objectives add Streamline1 trigger
+scoreboard objectives add Streamline2 trigger
+scoreboard objectives add Amphibious1 trigger
+scoreboard objectives add Amphibious2 trigger
+
+scoreboard objectives add Oxygenate1 trigger
+scoreboard objectives add Oxygenate2 trigger
+scoreboard objectives add Oxygenate3 trigger
+scoreboard objectives add Wildfire1 trigger
+scoreboard objectives add Wildfire2 trigger
+scoreboard objectives add Blaze1 trigger
+scoreboard objectives add GaleForce1 trigger
+scoreboard objectives add GaleForce2 trigger
+scoreboard objectives add Cyclone1 trigger
+scoreboard objectives add Cyclone2 trigger
