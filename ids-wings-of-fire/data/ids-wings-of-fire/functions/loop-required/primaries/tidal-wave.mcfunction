@@ -10,11 +10,11 @@ execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s ru
 execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine5","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
 
 #Rotate WaterLines
-execute as @e[type=area_effect_cloud,tag=WaterLine1] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine2] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine3] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
-execute as @e[type=area_effect_cloud,tag=WaterLine4] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine5] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine1] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine2] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine3] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=WaterLine4] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine5] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=WaterPath] run function ids-wings-of-fire:loop-required/primaries/particles/tidal-wave-parts

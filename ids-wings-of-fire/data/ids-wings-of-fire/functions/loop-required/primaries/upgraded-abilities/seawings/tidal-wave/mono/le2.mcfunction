@@ -10,11 +10,11 @@ execute if entity @s[tag=!CoolDown1,tag=!HighTide1,tag=Waterlogged2,tag=!Torrent
 execute if entity @s[tag=!CoolDown1,tag=!HighTide1,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_le2-5","sea_le2"],Particle:"block air",Duration:13,Radius:1f}
 
 #Rotate sea_le2-s
-execute as @e[type=area_effect_cloud,tag=sea_le2-1] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
-execute as @e[type=area_effect_cloud,tag=sea_le2-2] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
-execute as @e[type=area_effect_cloud,tag=sea_le2-3] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
-execute as @e[type=area_effect_cloud,tag=sea_le2-4] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
-execute as @e[type=area_effect_cloud,tag=sea_le2-5] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
+execute as @e[type=area_effect_cloud,tag=sea_le2-1] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
+execute as @e[type=area_effect_cloud,tag=sea_le2-2] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
+execute as @e[type=area_effect_cloud,tag=sea_le2-3] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=sea_le2-4] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
+execute as @e[type=area_effect_cloud,tag=sea_le2-5] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=sea_le2] run function ids-wings-of-fire:loop-required/primaries/particles/tidal-wave-parts

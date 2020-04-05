@@ -3,10 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Venom Shot
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["VenomLine"],Particle:"block air",Duration:12,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["VenomLine","getRot"],Particle:"block air",Duration:12,Radius:1f}
 
 #Rotate VenomLine
-execute as @e[type=area_effect_cloud,tag=VenomLine] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=VenomLine,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=VenomLine,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=VenomLine] run particle squid_ink ~ ~ ~ 0 0 0 0.0125 45 force

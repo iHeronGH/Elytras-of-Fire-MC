@@ -3,10 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Venom Shot
-execute if entity @s[tag=!CoolDown1,tag=!Reaction1,tag=Noxious1,tag=Potency1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["rain_cd3le1ri1"],Particle:"block air",Duration:14,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=!Reaction1,tag=Noxious1,tag=Potency1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["rain_cd3le1ri1","getRot"],Particle:"block air",Duration:14,Radius:1f}
 
 #Rotate rain_cd3le1ri1
-execute as @e[type=area_effect_cloud,tag=rain_cd3le1ri1] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=rain_cd3le1ri1,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=rain_cd3le1ri1,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=rain_cd3le1ri1] run particle squid_ink ~ ~ ~ 0 0 0 0.0125 45 force

@@ -3,10 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Frost Breath
-execute if entity @s[tag=!CoolDown1,tag=!ArcticCore1,tag=Permafrost2,tag=Icefall1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["ice_cd3le2ri1"],Particle:"block air",Duration:18,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=!ArcticCore1,tag=Permafrost2,tag=Icefall1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["ice_cd3le2ri1","getRot"],Particle:"block air",Duration:18,Radius:1f}
 
 #Rotate ice_cd3le2ri1
-execute as @e[type=area_effect_cloud,tag=ice_cd3le2ri1] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=ice_cd3le2ri1,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=ice_cd3le2ri1,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=ice_cd3le2ri1] run function ids-wings-of-fire:loop-required/primaries/particles/frost-breath-parts

@@ -6,7 +6,7 @@
 execute if entity @s[tag=!CoolDown1,tag=Scorch2,tag=Dehydrate2,tag=!Desolation1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sand_cd2lf2"],Particle:"block air",Duration:14,Radius:1f}
 
 #Rotate sand_cd2lf2
-execute as @e[type=area_effect_cloud,tag=sand_cd2lf2] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=sand_cd2lf2] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=sand_cd2lf2] run function ids-wings-of-fire:loop-required/primaries/particles/flame-breath-parts

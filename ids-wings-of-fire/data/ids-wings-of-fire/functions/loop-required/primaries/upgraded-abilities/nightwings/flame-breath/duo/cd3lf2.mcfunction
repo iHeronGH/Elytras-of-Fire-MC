@@ -3,10 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Flame Breath
-execute if entity @s[tag=!CoolDown1,tag=Superheat3,tag=EternalFlame2,tag=!Fission1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["night_cd3lf2"],Particle:"block air",Duration:14,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=Superheat3,tag=EternalFlame2,tag=!Fission1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["night_cd3lf2","getRot"],Particle:"block air",Duration:14,Radius:1f}
 
 #Rotate night_cd3lf2
-execute as @e[type=area_effect_cloud,tag=night_cd3lf2] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=night_cd3lf2,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=night_cd3lf2,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=night_cd3lf2] run function ids-wings-of-fire:loop-required/primaries/particles/flame-breath-parts
