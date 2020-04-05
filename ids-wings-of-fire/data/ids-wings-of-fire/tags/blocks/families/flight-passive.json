@@ -3,6 +3,7 @@
 		"#ids-wings-of-fire:families/projectile-immune",
 		"#ids-wings-of-fire:families/water",
 		"#minecraft:stairs",
-		"#minecraft:slabs"
+		"#minecraft:slabs",
+		"#minecraft:carpets"
 	]
 }
