@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Shade Shackle Effect
 execute if entity @s[nbt={SelectedItem:{tag:{shadowbind:1,ra1:1}}}] at @s run effect give @e[distance=..7] slowness 1 1 true

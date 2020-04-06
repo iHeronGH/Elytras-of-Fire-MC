@@ -1,15 +1,22 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Run Datapack
 	#Runs Help
 function ids-wings-of-fire:loop-required/help
 function ids-wings-of-fire:loop-required/help-server
 
+	#RW Armour
+execute as @a[team=RainWings] store result score helmCol colour run data get entity @s Inventory[{Slot:103b}].tag.display.color
+execute as @a[team=RainWings] store result score chestCol colour run data get entity @s Inventory[{Slot:102b}].tag.display.color
+execute as @a[team=RainWings] store result score legsCol colour run data get entity @s Inventory[{Slot:101b}].tag.display.color
+execute as @a[team=RainWings] store result score feetCol colour run data get entity @s Inventory[{Slot:100b}].tag.display.color
+execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/camo-effect
+
 	#Generate Armours
 execute as @a run function ids-wings-of-fire:loop-required/generate-armour/check-armours
-execute as @a[team=RainWings,predicate=ids-wings-of-fire:detect-sneak] run function ids-wings-of-fire:loop-required/generate-armour/rainwing-camo
+execute as @a[team=RainWings,predicate=ids-wings-of-fire:detect-sneak] at @s run function ids-wings-of-fire:loop-required/generate-armour/rainwing-camo
 
 	#Start Timer
 function ids-wings-of-fire:loop-required/start-timer

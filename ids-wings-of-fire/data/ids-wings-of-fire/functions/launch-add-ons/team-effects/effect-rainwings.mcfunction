@@ -1,8 +1,9 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Effect All RainWings
+function ids-wings-of-fire:launch-add-ons/team-effects/entity-camo
 effect give @s jump_boost 1 0 true
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak] run effect give @s speed 1 1 true
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak] run effect give @s speed 1 2 true

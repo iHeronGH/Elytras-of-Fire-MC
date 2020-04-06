@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Generate Scoreboard
 
@@ -11,6 +11,11 @@ scoreboard objectives add help-server trigger
 
 scoreboard objectives add Health health
 scoreboard objectives add Attack minecraft.custom:minecraft.damage_dealt
+scoreboard objectives add feetCol dummy
+scoreboard objectives add legsCol dummy
+scoreboard objectives add chestCol dummy
+scoreboard objectives add headCol dummy
+scoreboard objectives add FollowRange dummy
 
 	#Ability Usage Scoreboard
 scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
