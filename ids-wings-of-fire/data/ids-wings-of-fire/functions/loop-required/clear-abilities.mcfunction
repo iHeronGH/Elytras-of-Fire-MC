@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Clear Primary Abilities
 execute if entity @s[tag=!Pyre,nbt={Inventory:[{tag:{flamebreath:1}}]}] run clear @s blaze_powder{flamebreath:1}

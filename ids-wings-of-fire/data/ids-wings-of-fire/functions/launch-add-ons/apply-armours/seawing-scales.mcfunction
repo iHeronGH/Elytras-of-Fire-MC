@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Give Armour
 replaceitem entity @s armor.head leather_helmet{display:{Name:'{"text":"SeaWing Scales","color":"dark_aqua","italic":false}',color:4159204},Unbreakable:1,HideFlags:63,Enchantments:[{id:"binding_curse",lvl:1},{id:"vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"SeaWing Scales",Slot:"head",Amount:4,Operation:0,UUIDMost:14535,UUIDLeast:167294},{AttributeName:"generic.armorToughness",Name:"SeaWing Scales",Slot:"head",Amount:2,Operation:0,UUIDMost:90921,UUIDLeast:161320}],seaarmor:1,tribearmor:1} 1

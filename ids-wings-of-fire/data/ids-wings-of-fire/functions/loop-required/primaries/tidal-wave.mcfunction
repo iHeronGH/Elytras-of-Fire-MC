@@ -1,20 +1,21 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Execute Tidal Wave
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine1","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine2","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine3","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine4","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine5","WaterPath"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine1","WaterPath","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine2","WaterPath","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine3","WaterPath","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine4","WaterPath","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,nbt={SelectedItem:{tag:{stock:1}}}] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["WaterLine5","WaterPath","getRot"],Particle:"block air",Duration:13,Radius:1f}
 
 #Rotate WaterLines
-execute as @e[type=area_effect_cloud,tag=WaterLine1] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine2] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine3] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
-execute as @e[type=area_effect_cloud,tag=WaterLine4] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
-execute as @e[type=area_effect_cloud,tag=WaterLine5] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine1,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine2,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine3,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=WaterLine4,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
+execute as @e[type=area_effect_cloud,tag=WaterLine5,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
+execute as @e[type=area_effect_cloud,tag=WaterPath,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=WaterPath] run function ids-wings-of-fire:loop-required/primaries/particles/tidal-wave-parts
