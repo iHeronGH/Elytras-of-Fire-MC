@@ -17,6 +17,9 @@ scoreboard objectives add chestCol dummy
 scoreboard objectives add headCol dummy
 scoreboard objectives add FollowRange dummy
 
+	#Synergy Scoreboards
+scoreboard objectives add hasFrost dummy
+
 	#Ability Usage Scoreboard
 scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCFrost minecraft.used:minecraft.carrot_on_a_stick

@@ -7,7 +7,7 @@ execute if entity @s[tag=!CoolDown1,tag=!ArcticCore1,tag=Permafrost2,tag=!Icefal
 
 #Rotate ice_le2
 execute as @e[type=area_effect_cloud,tag=ice_le2,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
-execute as @e[type=area_effect_cloud,tag=ice_le1,tag=getRot] run tag @s remove getRot
+execute as @e[type=area_effect_cloud,tag=ice_le2,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=ice_le2] run function ids-wings-of-fire:loop-required/primaries/particles/frost-breath-parts
@@ -17,6 +17,7 @@ execute as @e[type=area_effect_cloud,tag=ice_le2] at @s run tp @s ^ ^ ^0.7
 execute as @e[type=area_effect_cloud,tag=ice_le2] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] slowness 6 1 true
 execute as @e[type=area_effect_cloud,tag=ice_le2] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] mining_fatigue 6 1 true
 execute as @e[type=area_effect_cloud,tag=ice_le2] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] weakness 6 0 true
+execute as @e[type=area_effect_cloud,tag=ice_le2] at @s positioned ^ ^-1.33 ^0.5 run tag @e[distance=..0.75] add hasFrost3
 
 #If Hit a Block or Hits Entity, kill ice_le2
 execute as @e[type=area_effect_cloud,tag=ice_le2] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune run kill @s

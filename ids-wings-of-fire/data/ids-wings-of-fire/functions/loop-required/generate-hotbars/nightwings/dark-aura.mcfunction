@@ -3,4 +3,4 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Hotbar 5 Shade Shackle
-replaceitem entity @s[nbt=!{Inventory:[{Slot:4b,Count:1b,tag:{shadowbind:1,secondary:1,stock:1}}]}] hotbar.4 purple_dye{display:{Name:'{"text":"Shade Shackle","color":"dark_gray","bold":true,"italic":false}',Lore:['{"text":"[Select] this item to","color":"dark_gray"}','{"text":"activate Shade Shackle!","color":"dark_gray"}','{"text":"Upon activation, applies:","color":"dark_gray"}','{"text":"• Slowness 2","color":"yellow"}','{"text":"• Blindness 1","color":"red"}']},shadowbind:1,secondary:1,stock:1}
+replaceitem entity @s[nbt=!{Inventory:[{Slot:7b,Count:1b,tag:{shadowbind:1,secondary:1,stock:1}}]}] hotbar.7 purple_dye{display:{Name:'{"text":"Shade Shackle","color":"dark_gray","bold":true,"italic":false}',Lore:['{"text":"[Select] this item to","color":"dark_gray"}','{"text":"activate Shade Shackle!","color":"dark_gray"}','{"text":"Upon activation, applies:","color":"dark_gray"}','{"text":"• Slowness 2","color":"yellow"}','{"text":"• Blindness 1","color":"red"}']},shadowbind:1,secondary:1,stock:1}

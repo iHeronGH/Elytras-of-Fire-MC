@@ -9,9 +9,9 @@ tellraw @s[tag=!Tertiary,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to dup
 replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:0b,tag:{tertiary:1}}]}] hotbar.0 air
 replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:1b,tag:{tertiary:1}}]}] hotbar.1 air
 replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:2b,tag:{tertiary:1}}]}] hotbar.2 air
-replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:6b,tag:{tertiary:1}}]}] hotbar.6 air
-replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:7b,tag:{tertiary:1}}]}] hotbar.7 air
-replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:8b,tag:{tertiary:1}}]}] hotbar.8 air
+replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:3b,tag:{tertiary:1}}]}] hotbar.3 air
+replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:4b,tag:{tertiary:1}}]}] hotbar.4 air
+replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:5b,tag:{tertiary:1}}]}] hotbar.5 air
 
 #Remove Extra Tertiaries from Inventory
 replaceitem entity @s[tag=!Tertiary,nbt={Inventory:[{Slot:9b,tag:{tertiary:1}}]}] inventory.0 air
