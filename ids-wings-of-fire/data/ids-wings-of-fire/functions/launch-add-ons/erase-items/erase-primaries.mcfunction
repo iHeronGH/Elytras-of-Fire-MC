@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Announce Warning
 tellraw @s[tag=!Primary,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
@@ -9,9 +9,9 @@ tellraw @s[tag=!Primary,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to dupl
 replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:0b,tag:{primary:1}}]}] hotbar.0 air
 replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:1b,tag:{primary:1}}]}] hotbar.1 air
 replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:2b,tag:{primary:1}}]}] hotbar.2 air
+replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:3b,tag:{primary:1}}]}] hotbar.3 air
+replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:4b,tag:{primary:1}}]}] hotbar.4 air
 replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:5b,tag:{primary:1}}]}] hotbar.5 air
-replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:6b,tag:{primary:1}}]}] hotbar.6 air
-replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:7b,tag:{primary:1}}]}] hotbar.7 air
 replaceitem entity @s[tag=!Primary,nbt={Inventory:[{Slot:8b,tag:{primary:1}}]}] hotbar.8 air
 
 #Remove Extra Primaries from Inventory

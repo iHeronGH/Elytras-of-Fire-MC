@@ -1,6 +1,6 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Get FollowRange
 execute at @s as @e[type=#ids-wings-of-fire:12,distance=..16] at @s store result score @s FollowRange run data get entity @s Attributes[{Name:"generic.followRange"}].Base 1

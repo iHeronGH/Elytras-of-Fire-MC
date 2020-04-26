@@ -3,4 +3,4 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Hotbar 4 Flame Breath
-replaceitem entity @a[tag=Pyre,tag=Furnace1,tag=!Everburn1,tag=!Everburn2,tag=Inferno1,nbt=!{Inventory:[{Slot:3b,Count:1b,tag:{flamebreath:1,primary:1,cd1ai1:1}}]}] hotbar.3 blaze_powder{display:{Name:"{\"text\":\"§c§lFlame Breath§r\"}",Lore:['{"text":"[Sneak] + [Use] to","color":"dark_gray"}','{"text":"activate Flame Breath!","color":"dark_gray"}','{"text":"• Furnace I","color":"red"}','{"text":"• Inferno I","color":"red"}']},flamebreath:1,primary:1,cd1ai1:1}
+replaceitem entity @a[tag=Pyre,tag=Furnace1,tag=!Everburn1,tag=!Everburn2,tag=Inferno1,nbt=!{Inventory:[{Slot:6b,Count:1b,tag:{flamebreath:1,primary:1,cd1ai1:1}}]}] hotbar.6 blaze_powder{display:{Name:"{\"text\":\"§c§lFlame Breath§r\"}",Lore:['{"text":"[Sneak] + [Use] to","color":"dark_gray"}','{"text":"activate Flame Breath!","color":"dark_gray"}','{"text":"• Furnace I","color":"red"}','{"text":"• Inferno I","color":"red"}']},flamebreath:1,primary:1,cd1ai1:1}

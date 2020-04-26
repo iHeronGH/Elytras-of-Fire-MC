@@ -1,11 +1,11 @@
 #Wings of Fire Datapack for Minecraft Java 1.15.1
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Run Datapack
 	#Runs Help
 function ids-wings-of-fire:loop-required/help
-function ids-wings-of-fire:loop-required/help-server
+#function ids-wings-of-fire:loop-required/help-server
 
 	#RW Armour
 execute as @a[team=RainWings] store result score helmCol colour run data get entity @s Inventory[{Slot:103b}].tag.display.color
@@ -13,6 +13,10 @@ execute as @a[team=RainWings] store result score chestCol colour run data get en
 execute as @a[team=RainWings] store result score legsCol colour run data get entity @s Inventory[{Slot:101b}].tag.display.color
 execute as @a[team=RainWings] store result score feetCol colour run data get entity @s Inventory[{Slot:100b}].tag.display.color
 execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/camo-effect
+execute as @a[team=!RainWings,tag=matchHead] run tag @s remove matchHead
+execute as @a[team=!RainWings,tag=matchChest] run tag @s remove matchChest
+execute as @a[team=!RainWings,tag=matchLegs] run tag @s remove matchLegs
+execute as @a[team=!RainWings,tag=matchFeet] run tag @s remove matchFeet
 
 	#Generate Armours
 execute as @a run function ids-wings-of-fire:loop-required/generate-armour/check-armours
@@ -79,5 +83,8 @@ execute as @a[team=!NightWings,team=!SeaWings,nbt={ActiveEffects:[{Id:16b}]}] ru
 
 	#Trigger Upgrade Launch
 function ids-wings-of-fire:loop-required/run-upgrades
+
+	#Execute Synergies
+function ids-wings-of-fire:loop-required/synergies/frostbite
 
 execute if entity @e[tag=NoTNT] run kill @e[type=tnt]
