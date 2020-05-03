@@ -5,11 +5,11 @@
 #Enter Cooldown Ability 2
 tag @e[type=player,tag=CoolDownActive2] remove CoolDownActive2
 
-title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=SurgeActive] actionbar {"text":"You are no longer in cooldown!","bold":true,"color":"dark_red"}
-title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=StrikeActive] actionbar {"text":"You are no longer in cooldown!","bold":true,"color":"gray"}
-title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=GrowthActive] actionbar {"text":"You are no longer in cooldown!","bold":true,"color":"dark_green"}
-title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=ShockActive] actionbar {"text":"You are no longer in cooldown!","bold":true,"color":"gold"}
-title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=StormActive] actionbar {"text":"You are no longer in cooldown!","bold":true,"color":"yellow"}
+title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=SurgeActive] actionbar {"text":"Sky Surge is no longer in cooldown!","bold":true,"color":"dark_red"}
+title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=StrikeActive] actionbar {"text":"Serrated Strike is no longer in cooldown!","bold":true,"color":"gray"}
+title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=GrowthActive] actionbar {"text":"Overgrowth is no longer in cooldown!","bold":true,"color":"dark_green"}
+title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=ShockActive] actionbar {"text":"Terrashock no longer in cooldown!","bold":true,"color":"gold"}
+title @a[tag=!CoolDownActive2,tag=CoolDown2,tag=StormActive] actionbar {"text":"Desert Storm is no longer in cooldown!","bold":true,"color":"yellow"}
 
 tag @e[type=player,tag=SurgeActive] remove SurgeActive
 tag @e[type=player,tag=StrikeActive] remove StrikeActive

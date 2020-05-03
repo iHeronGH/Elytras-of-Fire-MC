@@ -3,7 +3,7 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Ready Terrashock
-execute if entity @s[scores={Activator=0},nbt={SelectedItem:{tag:{crumble:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{shockactivate:1,activator:1}
+execute if entity @s[nbt={SelectedItem:{tag:{crumble:1}}},nbt=!{Inventory:[{Slot:-106b}]}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{shockactivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{crumble:1}}},nbt={Inventory:[{tag:{shockactivate:1}}]}] run clear @s carrot_on_a_stick{shockactivate:1}
 
 #Tag ShockActive

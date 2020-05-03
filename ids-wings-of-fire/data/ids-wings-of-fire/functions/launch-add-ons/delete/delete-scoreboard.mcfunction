@@ -20,13 +20,16 @@ scoreboard objectives remove FollowRange
 	#Ability Usage Scoreboard
 scoreboard objectives remove RCFlame
 scoreboard objectives remove RCFrost
+scoreboard objectives remove hasFrost
 scoreboard objectives remove RCVenom
 scoreboard objectives remove RCOcean
 scoreboard objectives remove RCSurge
+scoreboard objectives remove RCSpark
 scoreboard objectives remove RCStrike
 scoreboard objectives remove RCGrowth
 scoreboard objectives remove RCShock
 scoreboard objectives remove RCStorm
+scoreboard objectives remove premonActive
 
 	#Ability Slot Scoreboard
 scoreboard objectives remove Primary

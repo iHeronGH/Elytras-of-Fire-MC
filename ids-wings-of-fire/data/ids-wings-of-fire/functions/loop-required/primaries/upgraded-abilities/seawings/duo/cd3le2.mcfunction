@@ -3,18 +3,18 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Tidal Wave
-execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-1","sea_cd3le2"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-2","sea_cd3le2"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-3","sea_cd3le2"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-4","sea_cd3le2"],Particle:"block air",Duration:13,Radius:1f}
-execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-5","sea_cd3le2"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-1","sea_cd3le2","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-2","sea_cd3le2","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-3","sea_cd3le2","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-4","sea_cd3le2","getRot"],Particle:"block air",Duration:13,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=HighTide3,tag=Waterlogged2,tag=!Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd3le2-5","sea_cd3le2","getRot"],Particle:"block air",Duration:13,Radius:1f}
 
 #Rotate sea_cd3le2-s
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2-1] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2-2] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2-3] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2-4] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2-5] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2-1,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-35 ~
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2-2,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~-17.5 ~
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2-3,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2-4,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~17.5 ~
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2-5,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~35 ~
 execute as @e[type=area_effect_cloud,tag=sea_cd3le2,tag=getRot] run tag @s remove getRot
 
 #Play Particles
@@ -26,7 +26,7 @@ execute as @e[type=area_effect_cloud,tag=sea_cd3le2] at @s positioned ^ ^-1.33 ^
 execute as @e[type=area_effect_cloud,tag=sea_cd3le2] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] mining_fatigue 6 1 true
 
 #If Hit a Block or Hits Entity, kill sea_cd3le2
-execute as @e[type=area_effect_cloud,tag=sea_cd3le2] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune run kill @s
+execute as @e[type=area_effect_cloud,tag=sea_cd3le2] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune unless block ^ ^0.1 ^0.1 water run kill @s
 execute as @e[type=area_effect_cloud,tag=sea_cd3le2] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,type=!tnt,distance=..0.74] run kill @s
 
 #Kill Fire and TNT

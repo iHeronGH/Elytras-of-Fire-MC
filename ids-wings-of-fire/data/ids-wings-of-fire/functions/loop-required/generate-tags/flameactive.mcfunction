@@ -3,7 +3,7 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Ready Flame Breath
-execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,scores={Activator=0},nbt={SelectedItem:{tag:{flamebreath:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{flameactivate:1,activator:1}
+execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt={SelectedItem:{tag:{flamebreath:1}}},nbt=!{Inventory:[{Slot:-106b}]}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{flameactivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{flamebreath:1}}},nbt={Inventory:[{tag:{flameactivate:1}}]}] run clear @s carrot_on_a_stick{flameactivate:1}
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={Inventory:[{tag:{flameactivate:1}}]}] run clear @s carrot_on_a_stick{flameactivate:1}
 

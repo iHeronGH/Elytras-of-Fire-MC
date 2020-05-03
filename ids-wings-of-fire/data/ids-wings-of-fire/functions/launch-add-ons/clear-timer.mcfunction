@@ -1,4 +1,4 @@
-#iDinoSoul's Datapack for Minecraft version 1.13.2 Java Edition
+#iDinoSoul's Datapack for Minecraft version 1.15.1 Java Edition
 #Created by iDinoSoul
 #YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 

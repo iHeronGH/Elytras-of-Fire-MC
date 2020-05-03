@@ -3,10 +3,11 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Execute Flame Breath
-execute if entity @s[tag=!CoolDown1,tag=Oxygenate3,tag=!Wildfire1,tag=!Blaze1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sky_cd3"],Particle:"block air",Duration:14,Radius:1f}
+execute if entity @s[tag=!CoolDown1,tag=Oxygenate3,tag=!Wildfire1,tag=!Blaze1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sky_cd3","getRot"],Particle:"block air",Duration:14,Radius:1f}
 
 #Rotate sky_cd3
-execute as @e[type=area_effect_cloud,tag=sky_cd3] at @s rotated as @s[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=sky_cd3,tag=getRot] at @s rotated as @p[tag=!CoolDown1] run tp @s ~ ~ ~ ~ ~
+execute as @e[type=area_effect_cloud,tag=sky_cd3,tag=getRot] run tag @s remove getRot
 
 #Play Particles
 execute at @e[type=area_effect_cloud,tag=sky_cd3] run function ids-wings-of-fire:loop-required/primaries/particles/flame-breath-parts

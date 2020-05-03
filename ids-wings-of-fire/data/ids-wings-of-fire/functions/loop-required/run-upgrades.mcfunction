@@ -19,8 +19,8 @@ execute as @a[team=!,scores={Upgrades=1..},nbt={SelectedItem:{tag:{primary:1}}}]
 execute as @a[team=!,scores={Upgrades=1..},nbt={SelectedItem:{tag:{secondary:1}}}] run function ids-wings-of-fire:loop-required/upgrades/display-secondary-upgrade-gui
 
 #Warns
-execute as @a[team=,scores={Upgrades=1..}] run tellraw @s ["",{"text":"You are currently not a part of any tribes! Join a\ntribe before attempting to upgrade abilities.","color":"red","bold":true}]
-execute as @a[team=!,scores={Upgrades=1..},nbt=!{SelectedItem:{tag:{primary:1}}},nbt=!{SelectedItem:{tag:{secondary:1}}}] run tellraw @s ["",{"text":"Not an upgradable item/ability! Please try again with\na different ability.","color":"red","bold":true}]
+execute as @a[team=,scores={Upgrades=1..}] run tellraw @s [{"text":"You are currently not a part of any tribes! Join a\ntribe before attempting to upgrade abilities.","color":"red","bold":true}]
+execute as @a[team=!,scores={Upgrades=1..},nbt=!{SelectedItem:{tag:{primary:1}}},nbt=!{SelectedItem:{tag:{secondary:1}}}] run tellraw @s [{"text":"Not an upgradable item/ability! Please try again with\na different ability.","color":"red","bold":true}]
 
 #Reset
 execute as @a[scores={Upgrades=1..}] run scoreboard players set @s Upgrades 0

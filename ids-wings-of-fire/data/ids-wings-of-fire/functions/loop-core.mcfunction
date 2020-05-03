@@ -57,6 +57,7 @@ execute as @a[team=MudWings] run function ids-wings-of-fire:loop-required/genera
 execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/generate-tags/growthactive
 execute as @a[team=SandWings] run function ids-wings-of-fire:loop-required/generate-tags/stormactive
 execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/generate-tags/surgeactive
+execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/generate-tags/sparkactive
 
 	#Afflict Passive Effects
 execute as @a[team=IceWings] run function ids-wings-of-fire:launch-add-ons/team-effects/effect-icewings
@@ -70,8 +71,11 @@ execute as @a[team=SkyWings] run function ids-wings-of-fire:launch-add-ons/team-
 	#Generate Hotbars
 execute as @a[team=!] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/check-tribe-upgrades
 execute as @a[team=IceWings] run function ids-wings-of-fire:loop-required/generate-hotbars/icewings/icicle-incision
+execute as @a[team=NightWings] run function ids-wings-of-fire:loop-required/generate-hotbars/nightwings/premonition
+execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/generate-hotbars/rainwings/soul-sap
 execute as @a[team=SandWings] run function ids-wings-of-fire:loop-required/generate-hotbars/sandwings/toxin-slash
 execute as @a[team=SeaWings] run function ids-wings-of-fire:loop-required/generate-hotbars/seawings/tail-flail
+execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/generate-hotbars/skywings/spark-punch
 
 	#Discourage Ability Dispersion
 execute if score t_sec timer matches 19 as @e[type=item,tag=] run function ids-wings-of-fire:loop-required/kill-abilities
@@ -82,9 +86,9 @@ execute as @a run function ids-wings-of-fire:loop-required/check-extras
 execute as @a[team=!NightWings,team=!SeaWings,nbt={ActiveEffects:[{Id:16b}]}] run effect clear @s night_vision
 
 	#Trigger Upgrade Launch
-function ids-wings-of-fire:loop-required/run-upgrades
+execute as @a[team=!] run function ids-wings-of-fire:loop-required/run-upgrades
 
 	#Execute Synergies
-function ids-wings-of-fire:loop-required/synergies/frostbite
+execute as @a[team=IceWings] run function ids-wings-of-fire:loop-required/synergies/frostbite
 
 execute if entity @e[tag=NoTNT] run kill @e[type=tnt]

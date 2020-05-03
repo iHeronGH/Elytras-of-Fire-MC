@@ -21,15 +21,3 @@ execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/gener
 execute as @a[team=SandWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/sand-secondary
 execute as @a[team=SeaWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/porous/sea-secondary
 execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/sky-secondary
-
-	#Tertiary Upgrades
-#execute as @a[team=IceWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/perma/ice-tertiary
-#execute as @a[team=MudWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/mud-tertiary
-#execute as @a[team=NightWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/night-tertiary
-#execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/rain-tertiary
-#execute as @a[team=SandWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/sand-tertiary
-#execute as @a[team=SeaWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/porous/sea-tertiary
-#execute as @a[team=SkyWings] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/pyre/sky-tertiary
-
-#to be continued...
-#:)

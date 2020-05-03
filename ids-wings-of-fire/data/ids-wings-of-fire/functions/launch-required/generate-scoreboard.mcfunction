@@ -17,19 +17,19 @@ scoreboard objectives add chestCol dummy
 scoreboard objectives add headCol dummy
 scoreboard objectives add FollowRange dummy
 
-	#Synergy Scoreboards
-scoreboard objectives add hasFrost dummy
-
 	#Ability Usage Scoreboard
 scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCFrost minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add hasFrost dummy
 scoreboard objectives add RCVenom minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCOcean minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCSurge minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add RCSpark minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStrike minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCShock minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStorm minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add premonActive dummy
 
 	#Ability Slot Scoreboard
 scoreboard objectives add Primary dummy
@@ -47,7 +47,6 @@ scoreboard players set t5 xp 800
 
 	#Timer Scoreboard
 scoreboard objectives add timer dummy
-#scoreboard objectives setdisplay sidebar timer
 scoreboard players set t_sec timer 0
 scoreboard players set sec timer 0
 scoreboard players set min timer 0

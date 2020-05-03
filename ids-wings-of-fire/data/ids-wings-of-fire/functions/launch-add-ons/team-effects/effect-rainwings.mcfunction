@@ -10,3 +10,7 @@ execute if entity @s[predicate=ids-wings-of-fire:detect-sneak] run effect give @
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt={OnGround:1b}] run effect give @s invisibility 1 0 true
 execute if entity @s[nbt={OnGround:0b,ActiveEffects:[{Id:14b}]}] run effect clear @s invisibility
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={ActiveEffects:[{Id:14b}]}] run effect clear @s invisibility
+
+#Soul Swipe Effect
+execute if entity @s[nbt={SelectedItem:{tag:{swipeactive:1}}},scores={Attack=1..}] run effect give @s[nbt=!{ActiveEffects:[{Id:10b}]}] regeneration 2 2 true
+execute if entity @s[scores={Attack=1..}] run scoreboard players set @s Attack 0

@@ -26,7 +26,7 @@ execute as @e[type=area_effect_cloud,tag=WaterPath] at @s positioned ^ ^-1.33 ^0
 execute as @e[type=area_effect_cloud,tag=WaterPath] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] mining_fatigue 4 1 true
 
 #If Hit a Block or Hits Entity, kill WaterPath
-execute as @e[type=area_effect_cloud,tag=WaterPath] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune run kill @s
+execute as @e[type=area_effect_cloud,tag=WaterPath] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune unless block ^ ^0.1 ^0.1 water run kill @s
 execute as @e[type=area_effect_cloud,tag=WaterPath] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,type=!tnt,distance=..0.74] run kill @s
 
 #Kill Fire and TNT

@@ -9,9 +9,9 @@ tellraw @s[tag=!Activator,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to du
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:0b,tag:{activator:1}}]}] hotbar.0 air
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:1b,tag:{activator:1}}]}] hotbar.1 air
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:2b,tag:{activator:1}}]}] hotbar.2 air
+replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:3b,tag:{activator:1}}]}] hotbar.3 air
+replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:4b,tag:{activator:1}}]}] hotbar.4 air
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:5b,tag:{activator:1}}]}] hotbar.5 air
-replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:6b,tag:{activator:1}}]}] hotbar.6 air
-replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:7b,tag:{activator:1}}]}] hotbar.7 air
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:8b,tag:{activator:1}}]}] hotbar.8 air
 
 #Remove Extra Primaries from Inventory
