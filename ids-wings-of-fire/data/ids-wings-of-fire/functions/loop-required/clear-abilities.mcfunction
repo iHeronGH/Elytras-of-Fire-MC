@@ -32,8 +32,9 @@ execute if entity @s[team=!SkyWings,nbt={Inventory:[{tag:{surgeactivate:1}}]}] r
 
 #Clear Tertiary Abilities
 execute if entity @s[team=!IceWings,nbt={Inventory:[{tag:{incisionactive:1}}]}] run clear @s white_dye{incisionactive:1}
+execute if entity @s[team=!MudWings,nbt={Inventory:[{tag:{swipeactive:1}}]}] run clear @s orange_dye{swipeactive:1}
 execute if entity @s[team=!NightWings,nbt={Inventory:[{tag:{sightactive:1}}]}] run clear @s gray_dye{sightactive:1}
-execute if entity @s[team=!RainWings,nbt={Inventory:[{tag:{swipeactive:1}}]}] run clear @s lime_dye{swipeactive:1}
+execute if entity @s[team=!RainWings,nbt={Inventory:[{tag:{sapactive:1}}]}] run clear @s lime_dye{sapactive:1}
 execute if entity @s[team=!SandWings,nbt={Inventory:[{tag:{toxinactive:1}}]}] run clear @s slime_ball{toxinactive:1}
 execute if entity @s[team=!SeaWings,nbt={Inventory:[{tag:{flailactive:1}}]}] run clear @s light_blue_dye{flailactive:1}
 execute if entity @s[team=!SkyWings,nbt={Inventory:[{tag:{emberstrike:1}}]}] run clear @s red_dye{emberstrike:1}

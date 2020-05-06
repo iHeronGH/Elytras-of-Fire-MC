@@ -16,6 +16,7 @@ scoreboard objectives add legsCol dummy
 scoreboard objectives add chestCol dummy
 scoreboard objectives add headCol dummy
 scoreboard objectives add FollowRange dummy
+scoreboard objectives add abilities trigger
 
 	#Ability Usage Scoreboard
 scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
@@ -30,6 +31,10 @@ scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCShock minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStorm minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add premonActive dummy
+scoreboard objectives add shootArrow dummy
+scoreboard objectives add throwEgg dummy
+scoreboard objectives add throwSnow dummy
+scoreboard objectives add mudSwipe dummy
 
 	#Ability Slot Scoreboard
 scoreboard objectives add Primary dummy

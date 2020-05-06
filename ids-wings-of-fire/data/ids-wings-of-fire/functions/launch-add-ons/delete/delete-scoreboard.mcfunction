@@ -16,6 +16,7 @@ scoreboard objectives remove legsCol
 scoreboard objectives remove chestCol
 scoreboard objectives remove headCol
 scoreboard objectives remove FollowRange
+scoreboard objectives remove abilities
 
 	#Ability Usage Scoreboard
 scoreboard objectives remove RCFlame
@@ -30,6 +31,10 @@ scoreboard objectives remove RCGrowth
 scoreboard objectives remove RCShock
 scoreboard objectives remove RCStorm
 scoreboard objectives remove premonActive
+scoreboard objectives remove shootArrow
+scoreboard objectives remove throwSnow
+scoreboard objectives remove throwEgg
+scoreboard objectives remove mudSwipe
 
 	#Ability Slot Scoreboard
 scoreboard objectives remove Primary
