@@ -5,6 +5,8 @@
 #Effect All RainWings
 function ids-wings-of-fire:launch-add-ons/team-effects/entity-camo
 effect give @s jump_boost 1 0 true
+effect clear @s[tag=nv] night_vision
+tag @s[tag=nv] remove nv
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak] run effect give @s speed 1 1 true
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak] run effect give @s speed 1 2 true
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt={OnGround:1b}] run effect give @s invisibility 1 0 true

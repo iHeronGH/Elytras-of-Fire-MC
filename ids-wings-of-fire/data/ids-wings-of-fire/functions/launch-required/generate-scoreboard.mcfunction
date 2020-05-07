@@ -31,9 +31,9 @@ scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCShock minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStorm minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add premonActive dummy
-scoreboard objectives add shootArrow dummy
-scoreboard objectives add throwEgg dummy
-scoreboard objectives add throwSnow dummy
+scoreboard objectives add shootArrow minecraft.used:minecraft.bow
+scoreboard objectives add throwEgg minecraft.used:minecraft.egg
+scoreboard objectives add throwSnow minecraft.used:minecraft.snowball
 scoreboard objectives add mudSwipe dummy
 
 	#Ability Slot Scoreboard

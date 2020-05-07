@@ -5,6 +5,8 @@
 #Effect All MudWings
 effect give @s strength 1 1 true
 effect give @s slowness 1 0 true
+effect clear @s[tag=nv] night_vision
+tag @s[tag=nv] remove nv
 
 #Mud Swipe Effect
 execute if entity @s[nbt={SelectedItem:{tag:{swipeactive:1}}},scores={Attack=1..}] unless entity @s[scores={mudSwipe=1..}] run scoreboard players set @s mudSwipe 160

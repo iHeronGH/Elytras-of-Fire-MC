@@ -4,6 +4,8 @@
 
 #Effect All SandWings
 effect give @s strength 1 0 true
+effect clear @s[tag=nv] night_vision
+tag @s[tag=nv] remove nv
 execute at @s unless block ~ ~-0.51 ~ #ids-wings-of-fire:families/desert/desert run effect give @s speed 1 0 true
 execute at @s unless block ~ ~-0.51 ~ #ids-wings-of-fire:families/desert/red-desert run effect give @s speed 1 0 true
 execute at @s if block ~ ~-0.51 ~ #ids-wings-of-fire:families/desert/desert run effect give @s speed 1 2 true

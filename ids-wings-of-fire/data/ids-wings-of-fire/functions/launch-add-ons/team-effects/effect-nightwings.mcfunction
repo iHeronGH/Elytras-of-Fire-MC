@@ -4,7 +4,8 @@
 
 #Effect All NightWings
 effect give @s strength 1 0 true
-effect give @s night_vision 11 0 true
+tag @s[tag=!nv] add nv
+effect give @s[tag=nv] night_vision 11 0 true
 execute if entity @s[predicate=ids-wings-of-fire:check-sunrise-to-sunset] run effect give @s speed 1 1 true
 execute unless entity @s[predicate=ids-wings-of-fire:check-sunrise-to-sunset] run effect clear @s speed
 

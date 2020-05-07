@@ -5,3 +5,5 @@
 #Effect All SkyWings
 effect give @s strength 1 0 true
 effect give @s speed 1 2 true
+effect clear @s[tag=nv] night_vision
+tag @s[tag=nv] remove nv

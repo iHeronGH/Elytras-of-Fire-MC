@@ -4,6 +4,8 @@
 
 #Effect All IceWings
 effect give @s strength 1 1 true
+effect clear @s[tag=nv] night_vision
+tag @s[tag=nv] remove nv
 
 #Speed 3 / 2 on Snow / Ice
 execute at @s if block ~ ~-0.51 ~ snow_block run effect give @s speed 1 2 true
