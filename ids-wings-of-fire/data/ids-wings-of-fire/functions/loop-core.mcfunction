@@ -3,20 +3,12 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Run Datapack
-	#Runs Help
-function ids-wings-of-fire:loop-required/help
-#function ids-wings-of-fire:loop-required/help-server
+	#SP vs MP
+execute store result score playerCount players if entity @a
 
-	#RW Armour
-execute as @a[team=RainWings] store result score helmCol colour run data get entity @s Inventory[{Slot:103b}].tag.display.color
-execute as @a[team=RainWings] store result score chestCol colour run data get entity @s Inventory[{Slot:102b}].tag.display.color
-execute as @a[team=RainWings] store result score legsCol colour run data get entity @s Inventory[{Slot:101b}].tag.display.color
-execute as @a[team=RainWings] store result score feetCol colour run data get entity @s Inventory[{Slot:100b}].tag.display.color
-execute as @a[team=RainWings] run function ids-wings-of-fire:loop-required/camo-effect
-execute as @a[team=!RainWings,tag=matchHead] run tag @s remove matchHead
-execute as @a[team=!RainWings,tag=matchChest] run tag @s remove matchChest
-execute as @a[team=!RainWings,tag=matchLegs] run tag @s remove matchLegs
-execute as @a[team=!RainWings,tag=matchFeet] run tag @s remove matchFeet
+	#Runs Help
+execute if score playerCount players matches 1 run function ids-wings-of-fire:loop-required/help
+execute if score playerCount players matches 2.. run function ids-wings-of-fire:loop-required/help-server
 
 	#Generate Armours
 execute as @a run function ids-wings-of-fire:loop-required/generate-armour/check-armours
@@ -27,6 +19,9 @@ function ids-wings-of-fire:loop-required/start-timer
 
 	#Track XP
 execute as @a[team=!] store result score @s xp run data get entity @s XpTotal
+
+	#Enable Abilities SB
+scoreboard players enable @a abilities
 
 	#Activate Primary/Secondary Abilities
 execute as @a[team=IceWings,tag=FrostActive] run function ids-wings-of-fire:loop-required/primaries/grant-buffs/icewing-buffs
@@ -68,28 +63,18 @@ execute as @a[team=SandWings] run function ids-wings-of-fire:launch-add-ons/team
 execute as @a[team=SeaWings] run function ids-wings-of-fire:launch-add-ons/team-effects/effect-seawings
 execute as @a[team=SkyWings] run function ids-wings-of-fire:launch-add-ons/team-effects/effect-skywings
 
-	#Generate Hotbars
-execute as @a[team=!,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/check-tribe-upgrades
-execute as @a[team=IceWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/icewings/icicle-incision
-execute as @a[team=MudWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/mudwings/mud-swipe
-execute as @a[team=NightWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/nightwings/premonition
-execute as @a[team=RainWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/rainwings/soul-sap
-execute as @a[team=SandWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/sandwings/toxin-slash
-execute as @a[team=SeaWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/seawings/tail-flail
-execute as @a[team=SkyWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/generate-hotbars/skywings/spark-punch
+execute as @a[scores={abilities=1..}] run function ids-wings-of-fire:loop-required/toggle/ability-toggle
 
 	#Discourage Ability Dispersion
 execute if score t_sec timer matches 19 as @e[type=item,tag=] run function ids-wings-of-fire:loop-required/kill-abilities
 execute as @e[type=player] run function ids-wings-of-fire:loop-required/clear-abilities
-execute as @a[tag=abilTogg1] run function ids-wings-of-fire:loop-required/check-extras
+execute as @a run function ids-wings-of-fire:loop-required/check-extras
 
 	#Trigger Upgrade Launch
 execute as @a[team=!] run function ids-wings-of-fire:loop-required/run-upgrades
 
-	#Execute Ability Toggle
-execute as @a run function ids-wings-of-fire:loop-required/ability-toggle
+	#Generate Hotbars
+execute as @a[team=!,tag=!abilToggOff] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/check-tribe-upgrades
 
 	#Execute Synergies
-execute as @a[team=IceWings,tag=abilTogg1] run function ids-wings-of-fire:loop-required/synergies/frostbite
-
-execute if entity @e[tag=NoTNT] run kill @e[type=tnt]
+execute as @a[team=IceWings,tag=!abilToggOff] run function ids-wings-of-fire:loop-required/synergies/frostbite

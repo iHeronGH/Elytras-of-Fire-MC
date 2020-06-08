@@ -9,7 +9,6 @@ execute store result score @s Tertiary run data get entity @s Inventory[{tag:{te
 execute store result score @s Activator run data get entity @s Inventory[{tag:{activator:1}}].Slot
 
 #Erase Extras
-execute unless entity @s[scores={Primary=6}] run function ids-wings-of-fire:launch-add-ons/erase-items/erase-primaries
-execute unless entity @s[scores={Secondary=7}] run function ids-wings-of-fire:launch-add-ons/erase-items/erase-secondaries
-execute unless entity @s[scores={Tertiary=8}] run function ids-wings-of-fire:launch-add-ons/erase-items/erase-tertiaries
-execute unless entity @s[team=!] run scoreboard players set @s Tertiary 0
+execute unless entity @s[scores={Primary=6}] run clear @s #ids-wings-of-fire:abilities{primary:1}
+execute unless entity @s[scores={Secondary=7}] run clear @s #ids-wings-of-fire:abilities{secondary:1}
+execute unless entity @s[scores={Tertiary=8}] run clear @s #ids-wings-of-fire:abilities{tertiary:1}

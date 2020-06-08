@@ -16,6 +16,7 @@ scoreboard objectives remove legsCol
 scoreboard objectives remove chestCol
 scoreboard objectives remove headCol
 scoreboard objectives remove FollowRange
+scoreboard objectives remove players
 scoreboard objectives remove abilities
 
 	#Ability Usage Scoreboard

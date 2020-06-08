@@ -16,6 +16,7 @@ scoreboard objectives add legsCol dummy
 scoreboard objectives add chestCol dummy
 scoreboard objectives add headCol dummy
 scoreboard objectives add FollowRange dummy
+scoreboard objectives add players dummy
 scoreboard objectives add abilities trigger
 
 	#Ability Usage Scoreboard

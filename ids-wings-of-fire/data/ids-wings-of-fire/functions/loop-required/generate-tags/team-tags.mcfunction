@@ -3,14 +3,8 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
 #Tag Pyre
-execute if entity @s[team=MudWings,tag=!Pyre] run tag @s add Pyre
-execute if entity @s[team=NightWings,tag=!Pyre] run tag @s add Pyre
-execute if entity @s[team=SandWings,tag=!Pyre] run tag @s add Pyre
-execute if entity @s[team=SkyWings,tag=!Pyre] run tag @s add Pyre
-execute if entity @s[team=IceWings,tag=Pyre] run tag @s remove Pyre
-execute if entity @s[team=RainWings,tag=Pyre] run tag @s remove Pyre
-execute if entity @s[team=SeaWings,tag=Pyre] run tag @s remove Pyre
-execute if entity @s[team=,tag=Pyre] run tag @s remove Pyre
+execute unless entity @s[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,tag=!Pyre] run tag @s add Pyre
+execute unless entity @s[team=!IceWings,team=!RainWings,team=!SeaWings,team=!,tag=Pyre] run tag @s remove Pyre
 
 #Tag Perma
 execute if entity @s[team=IceWings,tag=!Perma] run tag @s add Perma
