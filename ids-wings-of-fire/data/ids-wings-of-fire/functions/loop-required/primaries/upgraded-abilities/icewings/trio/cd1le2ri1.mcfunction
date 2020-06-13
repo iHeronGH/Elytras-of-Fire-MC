@@ -13,6 +13,12 @@ execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1,tag=getRot] run tag @s re
 execute at @e[type=area_effect_cloud,tag=ice_cd1le2ri1] run function ids-wings-of-fire:loop-required/primaries/particles/frost-breath-parts
 execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s run tp @s ^ ^ ^0.7
 
+#Place Snow
+execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^-0.45 ^ ^0.7 unless block ~ ~-0.8 ~ #ids-wings-of-fire:families/airs if block ~ ~ ~ #ids-wings-of-fire:families/airs run setblock ~ ~ ~ snow replace
+execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^0.45 ^ ^0.7 unless block ~ ~-0.8 ~ #ids-wings-of-fire:families/airs if block ~ ~ ~ #ids-wings-of-fire:families/airs run setblock ~ ~ ~ snow replace
+execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^-0.45 ^ ^0.7 if block ~ ~ ~ snow run summon area_effect_cloud ~ ~0.2 ~ {Tags:["snow_aec2"],Particle:"block air",Duration:100,Radius:1f}
+execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^0.45 ^ ^0.7 if block ~ ~ ~ snow run summon area_effect_cloud ~ ~0.2 ~ {Tags:["snow_aec2"],Particle:"block air",Duration:100,Radius:1f}
+
 #Effect Entities
 execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] slowness 6 1 true
 execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] mining_fatigue 6 1 true
@@ -24,9 +30,4 @@ execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s unless block ^ ^0.
 execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,distance=..0.74] run kill @s
 
 #Kill Fire
-execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^ ^ ^1 if block ~ ~0.6 ~ fire run fill ^0.45 ^0.5 ^0.1 ^-0.45 ^-0.5 ^-0.1 air replace fire
-
-#Enter Cooldown
-tag @s[tag=!CoolDown1] add CoolDown1
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-one
-tag @s[tag=!CoolDownActive1] add CoolDownActive1
+execute as @e[type=area_effect_cloud,tag=ice_cd1le2ri1] at @s positioned ^ ^ ^1 if block ~ ~ ~ fire run fill ^0.75 ^0.2 ^0.75 ^-0.75 ^-0.2 ^-0.75 air replace fire

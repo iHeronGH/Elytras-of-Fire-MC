@@ -17,3 +17,7 @@ execute if entity @s[team=!RainWings,tag=Potent] run tag @s remove Potent
 #Tag Porous
 execute if entity @s[team=SeaWings,tag=!Porous] run tag @s add Porous
 execute if entity @s[team=!SeaWings,tag=Porous] run tag @s remove Porous
+
+#Tag Dragon
+execute unless entity @s[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=!Dragon] run tag @s add Dragon
+execute if entity @s[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=Dragon] run tag @s remove Dragon

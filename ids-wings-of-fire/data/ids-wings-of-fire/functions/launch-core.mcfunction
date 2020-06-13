@@ -6,7 +6,6 @@
 function ids-wings-of-fire:launch-required/generate-scoreboard
 function ids-wings-of-fire:launch-required/generate-teams
 function ids-wings-of-fire:launch-required/welcome
-function ids-wings-of-fire:loop-required/toggle/ability-toggle
 forceload remove 29999977 19832
 forceload add 29999977 19832
 fill 29999976 0 19831 29999978 2 19833 bedrock

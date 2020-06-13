@@ -19,8 +19,3 @@ execute as @e[type=area_effect_cloud,tag=rain_cd2le1] at @s positioned ^ ^-1.33 
 #If Hit a Block or Hits Entity, kill rain_cd2le1
 execute as @e[type=area_effect_cloud,tag=rain_cd2le1] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune run kill @s
 execute as @e[type=area_effect_cloud,tag=rain_cd2le1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,distance=..0.79] run kill @s
-
-#Enter Cooldown
-tag @s[tag=!CoolDown1] add CoolDown1
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-one
-tag @s[tag=!CoolDownActive1] add CoolDownActive1

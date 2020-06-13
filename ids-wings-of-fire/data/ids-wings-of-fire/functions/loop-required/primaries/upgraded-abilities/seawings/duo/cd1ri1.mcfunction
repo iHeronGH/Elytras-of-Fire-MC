@@ -30,11 +30,6 @@ execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s unless block ^ ^0.1 ^
 execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,type=!tnt,distance=..0.74] run kill @s
 
 #Kill Fire and TNT
-execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s positioned ^ ^ ^1 if block ~ ~ ~ fire run fill ^0.45 ^0.5 ^0.1 ^-0.45 ^-0.5 ^-0.1 air replace fire
+execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s positioned ^ ^ ^1 if block ~ ~ ~ fire run fill ^1 ^0.25 ^1 ^-1 ^-0.25 ^-1 air replace fire
 execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s positioned ^ ^-0.2625 ^ if entity @e[type=tnt,distance=..1.33] run execute as @e[type=tnt] positioned as @s if entity @e[type=area_effect_cloud,tag=sea_cd1ri1,distance=..1.33] run fill ~ ~ ~ ~ ~ ~ tnt replace #ids-wings-of-fire:families/airs
 execute as @e[type=area_effect_cloud,tag=sea_cd1ri1] at @s positioned ^ ^-0.2625 ^ if entity @e[type=tnt,distance=..1.33] run kill @e[type=tnt,distance=..1.33]
-
-#Enter Cooldown
-tag @s[tag=!CoolDown1] add CoolDown1
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-one
-tag @s[tag=!CoolDownActive1] add CoolDownActive1

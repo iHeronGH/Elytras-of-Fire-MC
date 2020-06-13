@@ -3,17 +3,17 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Delete All Teams
-team leave @e[team=IceWings]
+team leave @e[type=player,team=IceWings]
+team leave @e[type=player,team=MudWings]
+team leave @e[type=player,team=NightWings]
+team leave @e[type=player,team=RainWings]
+team leave @e[type=player,team=SandWings]
+team leave @e[type=player,team=SeaWings]
+team leave @e[type=player,team=SkyWings]
 team remove IceWings
-team leave @e[team=MudWings]
 team remove MudWings
-team leave @e[team=NightWings]
 team remove NightWings
-team leave @e[team=RainWings]
 team remove RainWings
-team leave @e[team=SandWings]
 team remove SandWings
-team leave @e[team=SeaWings]
 team remove SeaWings
-team leave @e[team=SkyWings]
 team remove SkyWings

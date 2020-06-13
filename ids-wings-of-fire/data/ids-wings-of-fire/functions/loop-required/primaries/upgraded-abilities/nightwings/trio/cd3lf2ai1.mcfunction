@@ -20,8 +20,3 @@ execute as @e[type=area_effect_cloud,tag=night_cd3lf2ai1] at @s positioned ^ ^ ^
 execute as @e[type=area_effect_cloud,tag=night_cd3lf2ai1] at @s unless block ^ ^0.2 ^0.15 #ids-wings-of-fire:families/projectile-immune run kill @s
 execute as @e[type=area_effect_cloud,tag=night_cd3lf2ai1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,distance=..0.75] run kill @s
 execute as @e[type=area_effect_cloud,tag=night_cd3lf2ai1] at @s run kill @e[type=arrow,distance=..1.875]
-
-#Enter Cooldown
-tag @s[tag=!CoolDown1] add CoolDown1
-function ids-wings-of-fire:launch-add-ons/announce-cooldown-one
-tag @s[tag=!CoolDownActive1] add CoolDownActive1

@@ -3,10 +3,13 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Clear Primary Abilities
-execute if entity @s[tag=!Pyre,nbt={Inventory:[{tag:{flamebreath:1}}]}] run clear @s blaze_powder{flamebreath:1}
 execute if entity @s[team=!IceWings,nbt={Inventory:[{tag:{frostbreath:1}}]}] run clear @s prismarine_shard{frostbreath:1}
+execute if entity @s[team=!MudWings,nbt={Inventory:[{tag:{mwflame:1}}]}] run clear @s blaze_powder{mwflame:1}
+execute if entity @s[team=!NightWings,nbt={Inventory:[{tag:{nwflame:1}}]}] run clear @s blaze_powder{nwflame:1}
 execute if entity @s[team=!RainWings,nbt={Inventory:[{tag:{venomshot:1}}]}] run clear @s black_dye{venomshot:1}
+execute if entity @s[team=!SandWings,nbt={Inventory:[{tag:{snwflame:1}}]}] run clear @s blaze_powder{snwflame:1}
 execute if entity @s[team=!SeaWings,nbt={Inventory:[{tag:{waterwave:1}}]}] run clear @s prismarine_crystals{waterwave:1}
+execute if entity @s[team=!SkyWings,nbt={Inventory:[{tag:{skwflame:1}}]}] run clear @s blaze_powder{skwflame:1}
 
 	#Clear Primary Ability Activators
 execute if entity @s[tag=!Pyre,nbt={Inventory:[{tag:{flameactivate:1}}]}] run clear @s carrot_on_a_stick{flameactivate:1}
