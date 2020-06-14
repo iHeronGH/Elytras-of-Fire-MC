@@ -3,7 +3,7 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Ready Frost Breath
-execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,tag=!Activator,nbt={SelectedItem:{tag:{frostbreath:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,frostactivate:1,activator:1}
+execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt=!{Inventory:[{Slot:-106b}]},nbt={SelectedItem:{tag:{frostbreath:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,frostactivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{frostbreath:1}}},nbt={Inventory:[{tag:{frostactivate:1}}]}] run clear @s carrot_on_a_stick{frostactivate:1}
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={Inventory:[{tag:{frostactivate:1}}]}] run clear @s carrot_on_a_stick{frostactivate:1}
 

@@ -8,7 +8,7 @@ execute if entity @s[scores={Secondary=7},tag=!Secondary] run tag @s add Seconda
 execute if entity @s[scores={Tertiary=8},tag=!Tertiary] run tag @s add Tertiary
 execute if entity @s[scores={Activator=-106},tag=!Activator] run tag @s add Activator
 
-execute if entity @s[scores={Primary=0},tag=Primary] run tag @s remove Primary
-execute if entity @s[scores={Secondary=0},tag=Secondary] run tag @s remove Secondary
-execute if entity @s[scores={Tertiary=0},tag=Tertiary] run tag @s remove Tertiary
-execute if entity @s[scores={Activator=0},tag=Activator] run tag @s remove Activator
+execute unless entity @s[scores={Primary=6},tag=Primary] run tag @s remove Primary
+execute unless entity @s[scores={Secondary=7},tag=Secondary] run tag @s remove Secondary
+execute unless entity @s[scores={Tertiary=8},tag=Tertiary] run tag @s remove Tertiary
+execute unless entity @s[scores={Activator=-106},tag=Activator] run tag @s remove Activator

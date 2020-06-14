@@ -3,7 +3,7 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Ready Tidal Wave
-execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,tag=!Activator,nbt={SelectedItem:{tag:{waterwave:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,wateractivate:1,activator:1}
+execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt=!{Inventory:[{Slot:-106b}]},nbt={SelectedItem:{tag:{waterwave:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,wateractivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{waterwave:1}}},nbt={Inventory:[{tag:{wateractivate:1}}]}] run clear @s carrot_on_a_stick{wateractivate:1}
 execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={Inventory:[{tag:{wateractivate:1}}]}] run clear @s carrot_on_a_stick{wateractivate:1}
 
