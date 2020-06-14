@@ -1,6 +1,6 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Check for Armours
 execute if entity @s[team=IceWings,nbt=!{Inventory:[{tag:{icearmor:1}}]}] run function ids-wings-of-fire:launch-add-ons/apply-armours/icewing-scales

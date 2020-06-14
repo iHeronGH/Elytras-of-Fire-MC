@@ -1,6 +1,6 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Play Particles
 particle item_snowball ~ ~ ~ 0 0 0 1 50 force

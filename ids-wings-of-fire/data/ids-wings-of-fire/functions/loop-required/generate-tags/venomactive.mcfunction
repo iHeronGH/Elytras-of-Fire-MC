@@ -1,6 +1,6 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Ready Venom Shot
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,tag=!Activator,nbt={SelectedItem:{tag:{venomshot:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,venomactivate:1,activator:1}

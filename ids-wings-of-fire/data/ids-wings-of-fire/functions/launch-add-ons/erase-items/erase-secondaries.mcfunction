@@ -1,9 +1,9 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Announce Warning
-tellraw @s[tag=!Secondary,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
+tellraw @s[tag=!Secondary,tag=Dragon,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
 
 #Remove Extra Secondaries from Hotbar
 replaceitem entity @s[tag=!Secondary,nbt={Inventory:[{Slot:0b,tag:{secondary:1}}]}] hotbar.0 air

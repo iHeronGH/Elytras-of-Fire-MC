@@ -1,4 +1,4 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
@@ -21,7 +21,7 @@ function ids-wings-of-fire:loop-required/start-timer
 	#Track XP
 execute as @a[tag=Dragon] store result score @s xp run data get entity @s XpTotal
 
-	#Enable Abilities SB
+	#Enable Abilities Scoreboard
 scoreboard players enable @a abilities
 
 	#Activate Primary/Secondary Abilities

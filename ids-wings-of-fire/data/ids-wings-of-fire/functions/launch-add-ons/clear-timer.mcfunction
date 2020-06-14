@@ -1,6 +1,6 @@
-#iDinoSoul's Datapack for Minecraft version 1.15.1 Java Edition
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Clear Timer
 scoreboard players set t_sec timer 0

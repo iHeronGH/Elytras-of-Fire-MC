@@ -1,6 +1,6 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Execute Flame Breath
 execute if entity @s[tag=!CoolDown1,tag=Scorch2,tag=Dehydrate2,tag=Desolation1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sand_cd2lf2ri1","getRot"],Particle:"block air",Duration:18,Radius:1f}

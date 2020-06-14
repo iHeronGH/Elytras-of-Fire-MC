@@ -1,9 +1,9 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Announce Warning
-tellraw @s[tag=!Activator,team=!,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
+tellraw @s[tag=!Activator,tag=Dragon,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
 
 #Remove Extra Activators from Hotbar
 replaceitem entity @s[tag=!Activator,nbt={Inventory:[{Slot:0b,tag:{activator:1}}]}] hotbar.0 air

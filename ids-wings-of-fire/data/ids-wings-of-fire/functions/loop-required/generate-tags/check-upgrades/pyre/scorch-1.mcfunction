@@ -1,24 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Add CheckTags
-execute if entity @s[scores={Scorch1=1..},tag=Scorch1] run tag @s add Scorch1_T1AO
-execute if entity @s[scores={Scorch1=1..},tag=Scorch2] run tag @s add Scorch1_T2AO
-execute if entity @s[scores={Scorch1=1..},tag=Scorch3] run tag @s add Scorch1_T3AO
-execute if score @s[scores={Scorch1=1..},tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO] xp < t1 xp run tag @s add Scorch1_NEXp
-execute if entity @s[scores={Scorch1=1..},tag=!Scorch1,tag=!Scorch2,tag=!Scorch3,tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO,tag=!Scorch1_NEXp] if score @s xp >= t1 xp run tag @s add Scorch1_temp
+execute if entity @s[tag=Scorch1] run tag @s add Scorch1_T1AO
+execute if entity @s[tag=Scorch2] run tag @s add Scorch1_T2AO
+execute if entity @s[tag=Scorch3] run tag @s add Scorch1_T3AO
+execute if score @s[tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO] xp < t1 xp run tag @s add Scorch1_NEXp
+execute if entity @s[tag=!Scorch1_T1AO,tag=!Scorch1_T2AO,tag=!Scorch1_T3AO,tag=!Scorch1_NEXp] run tag @s add Scorch1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Scorch1_T1AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Scorch1_T2AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch II","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Scorch1_T3AO] run tellraw @s ["",{"text":"You already own ","color":"gray"},{"text":"Scorch III","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Scorch II","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_T3AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Scorch III","color":"red","bold":true},{"text":"!","color":"gray"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Scorch1_NEXp] run tellraw @s ["",{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+execute if entity @s[tag=Scorch1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Scorch 1
-execute if entity @s[tag=Scorch1_temp] run tellraw @s ["",{"text":"You have successfully purchased ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
+execute if entity @s[tag=Scorch1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Scorch I","color":"red","bold":true},{"text":"!","color":"gray"}]
 execute if entity @s[tag=Scorch1_temp] run tag @s add Scorch1
 execute if entity @s[tag=Scorch1_temp,tag=Scorch1] run xp add @s -300
 

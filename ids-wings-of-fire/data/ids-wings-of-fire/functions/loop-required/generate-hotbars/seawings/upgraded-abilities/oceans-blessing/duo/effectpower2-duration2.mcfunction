@@ -1,6 +1,6 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
+#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Hotbar 8 Ocean's Blessing
 replaceitem entity @s[nbt=!{Inventory:[{Slot:7b,Count:1b,tag:{oceanicbless:1,secondary:1,ep2du2:1}}]}] hotbar.7 heart_of_the_sea{display:{Name:'{"text":"Ocean\'s Blessing","color":"dark_aqua","bold":true,"italic":false}',Lore:['{"text":"[Select] this item to","color":"dark_gray"}','{"text":"activate Ocean\'s Blessing!","color":"dark_gray"}','{"text":"Upon activation, applies:","color":"dark_gray"}','{"text":"• Speed in water","color":"green"}','{"text":"• Streamline II","color":"dark_aqua"}','{"text":"• Amphibious II","color":"dark_aqua"}']},oceanicbless:1,secondary:1,ep2du2:1}

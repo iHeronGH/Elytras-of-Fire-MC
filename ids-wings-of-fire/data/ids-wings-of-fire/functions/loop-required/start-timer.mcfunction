@@ -1,4 +1,4 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1 0
+#Wings of Fire Datapack for Minecraft Java 1.15.X 0
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 

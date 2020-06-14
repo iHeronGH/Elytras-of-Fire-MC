@@ -1,4 +1,4 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.1
+#Wings of Fire Datapack for Minecraft Java 1.15.X
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w?view_as=subscriber
 
@@ -10,8 +10,3 @@ execute at @s[tag=!CoolDown2] unless block ~ ~-0.51 ~ #ice unless block ~ ~-0.51
 execute at @s[tag=!CoolDown2] if block ~ ~-0.5 ~ #ice run effect give @s speed 8 1 true
 execute at @s[tag=!CoolDown2] if block ~ ~-0.5 ~ snow_block run effect give @s speed 8 2 true
 execute at @s[tag=!CoolDown2] if block ~ ~ ~ snow run effect give @s speed 8 2 true
-
-#Enter Cooldown
-tag @s add CoolDown2
-execute as @s[tag=!CoolDownActive2] run function ids-wings-of-fire:launch-add-ons/announce-cooldown-two
-tag @s add CoolDownActive2
