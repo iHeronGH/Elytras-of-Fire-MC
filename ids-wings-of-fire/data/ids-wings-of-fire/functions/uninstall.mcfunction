@@ -5,8 +5,10 @@
 #Uninstall Datapack
 function ids-wings-of-fire:launch-add-ons/delete/delete-scoreboard
 function ids-wings-of-fire:launch-add-ons/delete/delete-teams
-clear @a #ids-wings-of-fire:leather-armour{tribearmor:1}
+clear @e[type=player] #ids-wings-of-fire:leather-armour{tribearmor:1}
 function ids-wings-of-fire:launch-add-ons/delete/delete-tags
-execute as @a[tag=Dragon] run function ids-wings-of-fire:loop-required/clear-abilities
+execute as @e[type=player,tag=Pyrrhian] run function ids-wings-of-fire:loop-required/clear-abilities/clear-all
+execute if score dlcavailable dlc matches 1 run function ids-wings-of-fire:remove-dlcs
+scoreboard objectives remove dlc
 datapack disable "file/ids-wings-of-fire"
-tellraw @a [{"text":"The datapack has sucessfully deleted itself. If you wish to reinstall it, you can ","color":"gray"},{"text":"click here","color":"gold","clickEvent":{"action":"run_command","value":"/datapack enable \"file/ids-wings-of-fire\""}},{"text":" and it will magically reinstall itself, or you can type the command "},{"text":"/datapack enable \"file/ids-wings-of-fire\"","color":"gold","clickEvent":{"action":"suggest_command","value":"/datapack enable \"file/ids-wings-of-fire\""}},{"text":" to manually reinstall the datapack.\n\nThank you for using my datapack!","color":"gray"}]
+tellraw @e[type=player] [{"text":"\nThe datapack and any DLCs have sucessfully deleted\nthemselves. If you wish to reinstall the datapack, you can ","color":"gray"},{"text":"click\nhere","color":"gold","clickEvent":{"action":"run_command","value":"/datapack enable \"file/ids-wings-of-fire\""}},{"text":" and it will magically reinstall itself, or you can type the\ncommand "},{"text":"/datapack enable \"file/ids-wings-of-fire\"","color":"gold","clickEvent":{"action":"suggest_command","value":"/datapack enable \"file/ids-wings-of-fire\""}},{"text":" to manually\nreinstall the datapack.\n\nThank you for using my datapack!","color":"gray"}]

@@ -8,4 +8,5 @@ execute if entity @s[nbt=!{SelectedItem:{tag:{adrenaline:1}}},nbt={Inventory:[{t
 
 #Tag SurgeActive
 execute if entity @s[tag=!SurgeActive,tag=!CoolDown2,scores={RCSurge=1..},nbt={SelectedItem:{tag:{adrenaline:1}}}] run tag @s add SurgeActive
+execute if entity @s[tag=SurgeActive] run function ids-wings-of-fire:loop-required/secondaries/grant-buffs/skywing-buffs
 execute if entity @s[scores={RCSurge=1..}] run scoreboard players set @s RCSurge 0

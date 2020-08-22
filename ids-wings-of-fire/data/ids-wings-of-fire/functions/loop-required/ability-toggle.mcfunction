@@ -3,7 +3,7 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Teamless Toggle
-execute if entity @s[tag=!Dragon] run tag @s add abilToggOff
+tag @a[tag=!Pyrrhian,tag=!Pantalan] add abilToggOff
 
 #Run Switch Function
-execute if entity @s[scores={abilities=1..}] run function ids-wings-of-fire:loop-required/switch
+execute as @a[scores={abilities=1..}] run function ids-wings-of-fire:loop-required/switch

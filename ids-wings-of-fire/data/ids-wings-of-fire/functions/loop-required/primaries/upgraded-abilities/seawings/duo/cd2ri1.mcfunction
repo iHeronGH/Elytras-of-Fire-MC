@@ -22,12 +22,12 @@ execute at @e[type=area_effect_cloud,tag=sea_cd2ri1] run function ids-wings-of-f
 execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s run tp @s ^ ^ ^0.55
 
 #Effect Entities
-execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] slowness 4 0 true
-execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^-1.33 ^0.5 run effect give @e[distance=..0.75] mining_fatigue 4 1 true
+execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^ ^0.5 positioned ~ ~-1.2 ~ run effect give @e[distance=..0.75] slowness 4 0 true
+execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^ ^0.5 positioned ~ ~-1.2 ~ run effect give @e[distance=..0.75] mining_fatigue 4 1 true
 
 #If Hit a Block or Hits Entity, kill sea_cd2ri1
 execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s unless block ^ ^0.1 ^0.1 #ids-wings-of-fire:families/projectile-immune unless block ^ ^0.1 ^0.1 water run kill @s
-execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^-1.33 ^0.45 if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,type=!tnt,distance=..0.74] run kill @s
+execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^ ^0.45 positioned ~ ~-1.2 ~ if entity @e[type=!#arrows,type=!area_effect_cloud,type=!item,type=!tnt,distance=..0.74] run kill @s
 
 #Kill Fire and TNT
 execute as @e[type=area_effect_cloud,tag=sea_cd2ri1] at @s positioned ^ ^ ^1 if block ~ ~ ~ fire run fill ^1 ^0.25 ^1 ^-1 ^-0.25 ^-1 air replace fire

@@ -3,12 +3,12 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Tag Pri, Sec, Ter, Act
-execute if entity @s[scores={Primary=6},tag=!Primary] run tag @s add Primary
-execute if entity @s[scores={Secondary=7},tag=!Secondary] run tag @s add Secondary
-execute if entity @s[scores={Tertiary=8},tag=!Tertiary] run tag @s add Tertiary
-execute if entity @s[scores={Activator=-106},tag=!Activator] run tag @s add Activator
+tag @a[tag=Dragon,scores={Primary=6},tag=!Primary] add Primary
+tag @a[tag=Dragon,scores={Secondary=7},tag=!Secondary] add Secondary
+tag @a[tag=Dragon,scores={Tertiary=8},tag=!Tertiary] add Tertiary
+tag @a[tag=Dragon,scores={Activator=-106},tag=!Activator] add Activator
 
-execute unless entity @s[scores={Primary=6},tag=Primary] run tag @s remove Primary
-execute unless entity @s[scores={Secondary=7},tag=Secondary] run tag @s remove Secondary
-execute unless entity @s[scores={Tertiary=8},tag=Tertiary] run tag @s remove Tertiary
-execute unless entity @s[scores={Activator=-106},tag=Activator] run tag @s remove Activator
+execute at @a[tag=Dragon] unless entity @p[scores={Primary=6},tag=Primary] run tag @p remove Primary
+execute at @a[tag=Dragon] unless entity @p[scores={Secondary=7},tag=Secondary] run tag @p remove Secondary
+execute at @a[tag=Dragon] unless entity @p[scores={Tertiary=8},tag=Tertiary] run tag @p remove Tertiary
+execute at @a[tag=Dragon] unless entity @p[scores={Activator=-106},tag=Activator] run tag @p remove Activator

@@ -9,4 +9,5 @@ execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={Inventory:[{
 
 #Tag VenomActive
 execute if entity @s[tag=!VenomActive,tag=!CoolDown1,scores={RCVenom=1..},predicate=ids-wings-of-fire:detect-sneak,nbt={SelectedItem:{tag:{venomshot:1}}}] run tag @s add VenomActive
+execute if entity @s[tag=VenomActive] run function ids-wings-of-fire:loop-required/primaries/grant-buffs/rainwing-buffs
 execute if entity @s[scores={RCVenom=1..}] run scoreboard players set @s RCVenom 0

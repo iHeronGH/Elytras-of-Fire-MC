@@ -9,4 +9,5 @@ execute if entity @s[predicate=!ids-wings-of-fire:detect-sneak,nbt={Inventory:[{
 
 #Tag WaterActive
 execute if entity @s[tag=!WaterActive,tag=!CoolDown1,scores={RCOcean=1..},predicate=ids-wings-of-fire:detect-sneak,nbt={SelectedItem:{tag:{waterwave:1}}}] run tag @s add WaterActive
+execute if entity @s[tag=WaterActive] run function ids-wings-of-fire:loop-required/primaries/grant-buffs/seawing-buffs
 execute if entity @s[scores={RCOcean=1..}] run scoreboard players set @s RCOcean 0

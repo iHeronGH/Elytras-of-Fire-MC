@@ -3,21 +3,25 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Tag Pyre
-execute unless entity @s[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,tag=!Pyre] run tag @s add Pyre
-execute unless entity @s[team=!IceWings,team=!RainWings,team=!SeaWings,team=!,tag=Pyre] run tag @s remove Pyre
+execute as @a unless entity @s[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,tag=!Pyre] run tag @s add Pyre
+tag @a[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,team=!,tag=Pyre] remove Pyre
 
 #Tag Perma
-execute if entity @s[team=IceWings,tag=!Perma] run tag @s add Perma
-execute if entity @s[team=!IceWings,tag=Perma] run tag @s remove Perma
+tag @a[team=IceWings,tag=!Perma] add Perma
+tag @a[team=!IceWings,tag=Perma] remove Perma
 
 #Tag Potent
-execute if entity @s[team=RainWings,tag=!Potent] run tag @s add Potent
-execute if entity @s[team=!RainWings,tag=Potent] run tag @s remove Potent
+tag @a[team=RainWings,tag=!Potent] add Potent
+tag @a[team=!RainWings,tag=Potent] remove Potent
 
 #Tag Porous
-execute if entity @s[team=SeaWings,tag=!Porous] run tag @s add Porous
-execute if entity @s[team=!SeaWings,tag=Porous] run tag @s remove Porous
+tag @a[team=SeaWings,tag=!Porous] add Porous
+tag @a[team=!SeaWings,tag=Porous] remove Porous
+
+#Tag Pyrrhian
+execute as @a unless entity @s[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=Pyrrhian] run tag @s add Pyrrhian
+tag @a[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=Pyrrhian] remove Pyrrhian
 
 #Tag Dragon
-execute unless entity @s[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=!Dragon] run tag @s add Dragon
-execute if entity @s[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!SandWings,team=!SeaWings,team=!SkyWings,tag=Dragon] run tag @s remove Dragon
+tag @a[tag=Pyrrhian,tag=!Dragon] add Dragon
+tag @a[tag=!Pyrrhian,tag=Dragon] remove Dragon

@@ -3,24 +3,24 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Activate Upgrades
-scoreboard players enable @s Reaction1
-scoreboard players enable @s Reaction2
-scoreboard players enable @s Reaction3
-scoreboard players enable @s Noxious1
-scoreboard players enable @s Noxious2
-scoreboard players enable @s Potency1
-scoreboard players enable @s Photosynthesis1
-scoreboard players enable @s Photosynthesis2
-scoreboard players enable @s NaturesWrath1
-scoreboard players enable @s NaturesWrath2
+scoreboard players enable @p Reaction1
+scoreboard players enable @p Reaction2
+scoreboard players enable @p Reaction3
+scoreboard players enable @p Noxious1
+scoreboard players enable @p Noxious2
+scoreboard players enable @p Potency1
+scoreboard players enable @p Photosynthesis1
+scoreboard players enable @p Photosynthesis2
+scoreboard players enable @p NaturesWrath1
+scoreboard players enable @p NaturesWrath2
 
-execute if entity @s[scores={Reaction1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/reaction-1
-execute if entity @s[scores={Reaction2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/reaction-2
-execute if entity @s[scores={Reaction3=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/reaction-3
-execute if entity @s[scores={Noxious1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/noxious-1
-execute if entity @s[scores={Noxious2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/noxious-2
-execute if entity @s[scores={Potency1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/potency-1
-execute if entity @s[scores={Photosynthesis1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/photosynthesis-1
-execute if entity @s[scores={Photosynthesis2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/photosynthesis-2
-execute if entity @s[scores={NaturesWrath1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/natures-wrath-1
-execute if entity @s[scores={NaturesWrath2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/potent/natures-wrath-2
+execute as @p if entity @s[scores={Reaction1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/reaction-1
+execute as @p if entity @s[scores={Reaction2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/reaction-2
+execute as @p if entity @s[scores={Reaction3=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/reaction-3
+execute as @p if entity @s[scores={Noxious1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/noxious-1
+execute as @p if entity @s[scores={Noxious2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/noxious-2
+execute as @p if entity @s[scores={Potency1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/potency-1
+execute as @p if entity @s[scores={Photosynthesis1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/photosynthesis-1
+execute as @p if entity @s[scores={Photosynthesis2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/photosynthesis-2
+execute as @p if entity @s[scores={NaturesWrath1=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/natures-wrath-1
+execute as @p if entity @s[scores={NaturesWrath2=1..}] run function ids-wings-of-fire:loop-required/generate-tags/check-upgrades/rainwings/natures-wrath-2

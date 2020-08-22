@@ -5,9 +5,8 @@
 #Generate Scoreboard
 
 	#Essential Scoreboard
-scoreboard objectives remove Upgrades
+scoreboard objectives remove upgrades
 scoreboard objectives remove help
-scoreboard objectives remove help-server
 
 scoreboard objectives remove Health
 scoreboard objectives remove Attack
@@ -16,7 +15,6 @@ scoreboard objectives remove legsCol
 scoreboard objectives remove chestCol
 scoreboard objectives remove headCol
 scoreboard objectives remove FollowRange
-scoreboard objectives remove players
 scoreboard objectives remove abilities
 
 	#Ability Usage Scoreboard
@@ -24,18 +22,19 @@ scoreboard objectives remove RCFlame
 scoreboard objectives remove RCFrost
 scoreboard objectives remove hasFrost
 scoreboard objectives remove RCVenom
+scoreboard objectives remove RCGrowth
 scoreboard objectives remove RCOcean
 scoreboard objectives remove RCSurge
 scoreboard objectives remove RCSpark
 scoreboard objectives remove RCStrike
-scoreboard objectives remove RCGrowth
 scoreboard objectives remove RCShock
 scoreboard objectives remove RCStorm
+scoreboard objectives remove mudSwipe
 scoreboard objectives remove premonActive
+scoreboard objectives remove useRod
 scoreboard objectives remove shootArrow
 scoreboard objectives remove throwSnow
 scoreboard objectives remove throwEgg
-scoreboard objectives remove mudSwipe
 
 	#Ability Slot Scoreboard
 scoreboard objectives remove Primary

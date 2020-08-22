@@ -8,4 +8,5 @@ execute if entity @s[nbt=!{SelectedItem:{tag:{sharpedge:1}}},nbt={Inventory:[{ta
 
 #Tag StrikeActive
 execute if entity @s[tag=!StrikeActive,tag=!CoolDown2,scores={RCStrike=1..},nbt={SelectedItem:{tag:{sharpedge:1}}}] run tag @s add StrikeActive
+execute if entity @s[tag=StrikeActive] run function ids-wings-of-fire:loop-required/secondaries/grant-buffs/icewing-buffs
 execute if entity @s[scores={RCStrike=1..}] run scoreboard players set @s RCStrike 0

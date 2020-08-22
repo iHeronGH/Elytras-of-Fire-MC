@@ -2,7 +2,7 @@
 #Created by iDinoSoul
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
-#Delete All Teams
+#Delete All Tags
 tag @e[type=player,tag=Pyre] remove Pyre
 tag @e[type=player,tag=Perma] remove Perma
 tag @e[type=player,tag=Potent] remove Potent

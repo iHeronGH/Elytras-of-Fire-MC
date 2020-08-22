@@ -3,7 +3,9 @@
 #My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
 
 #Activates Datapack
+scoreboard objectives add dlc dummy
 function ids-wings-of-fire:launch-required/generate-scoreboard
+function ids-wings-of-fire:launch-required/generate-bossbars
 function ids-wings-of-fire:launch-required/generate-teams
 function ids-wings-of-fire:launch-required/welcome
 forceload remove 29999977 19832

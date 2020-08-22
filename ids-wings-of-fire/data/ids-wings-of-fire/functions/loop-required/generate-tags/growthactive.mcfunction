@@ -8,4 +8,5 @@ execute if entity @s[nbt=!{SelectedItem:{tag:{fertilize:1}}},nbt={Inventory:[{ta
 
 #Tag GrowthActive
 execute if entity @s[tag=!GrowthActive,tag=!CoolDown2,scores={RCGrowth=1..},nbt={SelectedItem:{tag:{fertilize:1}}}] run tag @s add GrowthActive
+execute if entity @s[tag=GrowthActive] run function ids-wings-of-fire:loop-required/secondaries/grant-buffs/rainwing-buffs
 execute if entity @s[scores={RCGrowth=1..}] run scoreboard players set @s RCGrowth 0

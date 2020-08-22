@@ -5,9 +5,8 @@
 #Generate Scoreboard
 
 	#Essential Scoreboard
-scoreboard objectives add Upgrades trigger
+scoreboard objectives add upgrades trigger
 scoreboard objectives add help trigger
-scoreboard objectives add help-server trigger
 
 scoreboard objectives add Health health
 scoreboard objectives add Attack minecraft.custom:minecraft.damage_dealt
@@ -16,7 +15,6 @@ scoreboard objectives add legsCol dummy
 scoreboard objectives add chestCol dummy
 scoreboard objectives add headCol dummy
 scoreboard objectives add FollowRange dummy
-scoreboard objectives add players dummy
 scoreboard objectives add abilities trigger
 
 	#Ability Usage Scoreboard
@@ -24,18 +22,19 @@ scoreboard objectives add RCFlame minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCFrost minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add hasFrost dummy
 scoreboard objectives add RCVenom minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCOcean minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCSurge minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCSpark minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStrike minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add RCGrowth minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCShock minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add RCStorm minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add premonActive dummy
-scoreboard objectives add shootArrow minecraft.used:minecraft.bow
-scoreboard objectives add throwEgg minecraft.used:minecraft.egg
-scoreboard objectives add throwSnow minecraft.used:minecraft.snowball
 scoreboard objectives add mudSwipe dummy
+scoreboard objectives add premonActive dummy
+scoreboard objectives add useRod minecraft.used:minecraft.fishing_rod
+scoreboard objectives add shootArrow minecraft.used:minecraft.bow
+scoreboard objectives add throwSnow minecraft.used:minecraft.snowball
+scoreboard objectives add throwEgg minecraft.used:minecraft.egg
 
 	#Ability Slot Scoreboard
 scoreboard objectives add Primary dummy
