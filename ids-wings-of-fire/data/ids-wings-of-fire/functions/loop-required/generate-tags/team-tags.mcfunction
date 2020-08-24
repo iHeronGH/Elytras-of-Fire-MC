@@ -24,4 +24,4 @@ tag @a[team=!IceWings,team=!MudWings,team=!NightWings,team=!RainWings,team=!Sand
 
 #Tag Dragon
 tag @a[tag=Pyrrhian,tag=!Dragon] add Dragon
-tag @a[tag=!Pyrrhian,tag=Dragon] remove Dragon
+execute unless score dlcavailable dlc matches 1 run tag @a[tag=!Pyrrhian,tag=Dragon] remove Dragon

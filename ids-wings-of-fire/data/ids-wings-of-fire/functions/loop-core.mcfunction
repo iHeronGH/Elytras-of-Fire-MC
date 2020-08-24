@@ -10,8 +10,8 @@ execute if entity @a[scores={help=1..}] run scoreboard players set @a[scores={he
 
 	#Generate Armours
 execute if entity @a[tag=Pyrrhian] run function ids-wings-of-fire:loop-required/generate-armour/give-armour
-execute at @a[tag=!Dragon] unless entity @p[nbt=!{Inventory:[{tag:{tribearmor:1}}]},nbt=!{Inventory:[{tag:{tribewings:1}}]}] run function ids-wings-of-fire:loop-required/generate-armour/remove-armour
-execute as @a[team=RainWings,predicate=ids-wings-of-fire:detect-sneak] at @s run function ids-wings-of-fire:loop-required/generate-armour/rainwing-camo
+execute as @a[tag=!Dragon] unless entity @s[nbt=!{Inventory:[{tag:{tribearmor:1}}]},nbt=!{Inventory:[{tag:{tribewings:1}}]}] run function ids-wings-of-fire:loop-required/generate-armour/remove-armour
+execute if entity @a[team=RainWings] as @a[team=RainWings,predicate=ids-wings-of-fire:detect-sneak] at @s run function ids-wings-of-fire:loop-required/generate-armour/rainwing-camo
 
 	#Start Timer
 function ids-wings-of-fire:loop-required/start-timer
@@ -34,7 +34,7 @@ execute if entity @a[team=SkyWings] run function ids-wings-of-fire:loop-required
 	#Tag Tribe Members
 function ids-wings-of-fire:loop-required/generate-tags/team-tags
 function ids-wings-of-fire:loop-required/generate-tags/ability-tags
-execute if entity @a[tag=Dragon] run function ids-wings-of-fire:loop-required/generate-tags/is-flying
+execute at @a run function ids-wings-of-fire:loop-required/generate-tags/is-flying
 
 	#Execute Ability Toggle
 function ids-wings-of-fire:loop-required/ability-toggle
