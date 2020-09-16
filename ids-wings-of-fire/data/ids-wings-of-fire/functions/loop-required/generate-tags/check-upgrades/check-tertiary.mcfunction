@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 	#Tertiary Abilities
 execute at @a[team=IceWings,tag=!abilToggOff,nbt=!{Inventory:[{tag:{incisionactive:1}}]}] run function ids-wings-of-fire:loop-required/generate-hotbars/icewings/icicle-incision
 execute at @a[team=MudWings,tag=!abilToggOff,nbt=!{Inventory:[{tag:{swipeactive:1}}]}] run function ids-wings-of-fire:loop-required/generate-hotbars/mudwings/mud-swipe

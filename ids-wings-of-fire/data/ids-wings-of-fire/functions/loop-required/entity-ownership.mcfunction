@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add/Remove premEntity Tag
 execute at @s[scores={throwSnow=1..}] positioned ~ ~1.2 ~ run tag @e[type=snowball,tag=!premEntity,limit=1,distance=..3] add premEntity
 execute at @s[scores={throwEgg=1..}] positioned ~ ~1.2 ~ run tag @e[type=egg,tag=!premEntity,limit=1,distance=..3] add premEntity

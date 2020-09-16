@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Tag Pyre
 execute as @a unless entity @s[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,tag=!Pyre] run tag @s add Pyre
 tag @a[team=!MudWings,team=!NightWings,team=!SandWings,team=!SkyWings,team=!,tag=Pyre] remove Pyre

@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Ready Terrashock
 execute if entity @s[nbt=!{Inventory:[{Slot:-106b}]},nbt={SelectedItem:{tag:{crumble:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,shockactivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{crumble:1}}},nbt={Inventory:[{tag:{shockactivate:1}}]}] run clear @s carrot_on_a_stick{shockactivate:1}

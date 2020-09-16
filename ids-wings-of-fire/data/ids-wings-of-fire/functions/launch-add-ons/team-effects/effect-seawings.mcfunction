@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Effect All SeaWings
 tag @a[team=SeaWings,tag=!nv] add nv
 effect give @a[team=SeaWings,tag=nv] night_vision 1000000 0 true

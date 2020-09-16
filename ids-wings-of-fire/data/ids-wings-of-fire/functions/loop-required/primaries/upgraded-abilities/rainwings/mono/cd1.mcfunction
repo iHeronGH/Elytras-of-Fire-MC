@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Execute Venom Shot
 execute if entity @s[tag=!CoolDown1,tag=Reaction1,tag=!Noxious1,tag=!Potency1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["rain_cd1","getRot"],Particle:"block air",Duration:12,Radius:1f}
 

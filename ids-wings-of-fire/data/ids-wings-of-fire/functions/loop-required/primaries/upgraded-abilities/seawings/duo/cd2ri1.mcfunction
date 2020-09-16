@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Execute Tidal Wave
 execute if entity @s[tag=!CoolDown1,tag=HighTide2,tag=!Waterlogged1,tag=Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd2ri1-1","sea_cd2ri1","getRot"],Particle:"block air",Duration:15,Radius:1f}
 execute if entity @s[tag=!CoolDown1,tag=HighTide2,tag=!Waterlogged1,tag=Torrent1] at @s run summon area_effect_cloud ~ ~1.2 ~ {Tags:["sea_cd2ri1-2","sea_cd2ri1","getRot"],Particle:"block air",Duration:15,Radius:1f}

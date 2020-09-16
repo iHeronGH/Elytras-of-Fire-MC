@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Effect All NightWings
 effect give @a[team=NightWings] strength 1 0 true
 tag @a[team=NightWings,tag=!nv] add nv

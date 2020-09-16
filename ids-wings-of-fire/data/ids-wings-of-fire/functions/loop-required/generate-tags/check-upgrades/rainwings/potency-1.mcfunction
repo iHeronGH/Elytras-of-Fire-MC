@@ -1,25 +1,21 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Potency1] run tag @s add Potency_T1AO
-execute if score @s[tag=!Potency_T1AO] xp < t3 xp run tag @s add Potency_NEXp
-execute if entity @s[tag=!Potency_T1AO,tag=!Potency_NEXp] run tag @s add Potency_temp
+tag @s[tag=Potency1] add po1_T1AO
+execute if score @s[tag=!po1_T1AO] xp < t3 xp run tag @s add po1_NEXp
+tag @s[tag=!po1_T1AO,tag=!po1_NEXp] add po1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Potency_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Potency I","color":"white","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=po1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Potency I","color":"white","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Potency_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=po1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Potency 1
-execute if entity @s[tag=Potency_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Potency I","color":"white","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Potency_temp] run tag @s add Potency1
-execute if entity @s[tag=Potency_temp,tag=Potency1] run xp add @s -900
+tellraw @s[tag=po1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Potency I","color":"white","bold":true},{"text":"!"}]
+tag @s[tag=po1_temp] add Potency1
+xp add @s[tag=po1_temp,tag=Potency1] -900
 
 #Remove CheckTags
-tag @s[tag=Potency_T1AO] remove Potency_T1AO
-tag @s[tag=Potency_NEXp] remove Potency_NEXp
-tag @s[tag=Potency_temp] remove Potency_temp
+tag @s[tag=po1_T1AO] remove po1_T1AO
+tag @s[tag=po1_NEXp] remove po1_NEXp
+tag @s[tag=po1_temp] remove po1_temp
 scoreboard players set @s Potency1 0

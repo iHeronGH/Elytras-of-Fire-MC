@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Dehydrate1] run tag @s add Dehydrate1_T1AO
-execute if entity @s[tag=Dehydrate2] run tag @s add Dehydrate1_T2AO
-execute if score @s[tag=!Dehydrate1_T1AO,tag=!Dehydrate1_T2AO] xp < t2 xp run tag @s add Dehydrate1_NEXp
-execute if entity @s[tag=!Dehydrate1_T1AO,tag=!Dehydrate1_T2AO,tag=!Dehydrate1_NEXp] run tag @s add Dehydrate1_temp
+tag @s[tag=Dehydrate1] add dh1_T1AO
+tag @s[tag=Dehydrate2] add dh1_T2AO
+execute if score @s[tag=!dh1_T1AO,tag=!dh1_T2AO] xp < t2 xp run tag @s add dh1_NEXp
+tag @s[tag=!dh1_T1AO,tag=!dh1_T2AO,tag=!dh1_NEXp] add dh1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Dehydrate1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Dehydrate I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Dehydrate1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Dehydrate II","color":"red","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=dh1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Dehydrate I","color":"red","bold":true},{"text":"!"}]
+tellraw @s[tag=dh1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Dehydrate II","color":"red","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Dehydrate1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=dh1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Dehydrate 1
-execute if entity @s[tag=Dehydrate1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Dehydrate I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Dehydrate1_temp] run tag @s add Dehydrate1
-execute if entity @s[tag=Dehydrate1_temp,tag=Dehydrate1] run xp add @s -450
+tellraw @s[tag=dh1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Dehydrate I","color":"red","bold":true},{"text":"!"}]
+tag @s[tag=dh1_temp] add Dehydrate1
+xp add @s[tag=dh1_temp,tag=Dehydrate1] -450
 
 #Remove CheckTags
-tag @s[tag=Dehydrate1_T1AO] remove Dehydrate1_T1AO
-tag @s[tag=Dehydrate1_T2AO] remove Dehydrate1_T2AO
-tag @s[tag=Dehydrate1_NEXp] remove Dehydrate1_NEXp
-tag @s[tag=Dehydrate1_temp] remove Dehydrate1_temp
+tag @s[tag=dh1_T1AO] remove dh1_T1AO
+tag @s[tag=dh1_T2AO] remove dh1_T2AO
+tag @s[tag=dh1_NEXp] remove dh1_NEXp
+tag @s[tag=dh1_temp] remove dh1_temp
 scoreboard players set @s Dehydrate1 0

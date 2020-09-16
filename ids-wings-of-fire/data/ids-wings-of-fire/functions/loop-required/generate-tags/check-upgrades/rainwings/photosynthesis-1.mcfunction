@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Photosynthesis1] run tag @s add Photosynthesis1_T1AO
-execute if entity @s[tag=Photosynthesis2] run tag @s add Photosynthesis1_T2AO
-execute if score @s[tag=!Photosynthesis1_T1AO,tag=!Photosynthesis1_T2AO] xp < t2 xp run tag @s add Photosynthesis1_NEXp
-execute if entity @s[tag=!Photosynthesis1_T1AO,tag=!Photosynthesis1_T2AO,tag=!Photosynthesis1_NEXp] run tag @s add Photosynthesis1_temp
+tag @s[tag=Photosynthesis1] add ps1_T1AO
+tag @s[tag=Photosynthesis2] add ps1_T2AO
+execute if score @s[tag=!ps1_T1AO,tag=!ps1_T2AO] xp < t1 xp run tag @s add ps1_NEXp
+tag @s[tag=!ps1_T1AO,tag=!ps1_T2AO,tag=!ps1_NEXp] add ps1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Photosynthesis1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Photosynthesis I","color":"dark_green","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Photosynthesis1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Photosynthesis II","color":"dark_green","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=ps1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Photosynthesis I","color":"dark_green","bold":true},{"text":"!"}]
+tellraw @s[tag=ps1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Photosynthesis II","color":"dark_green","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Photosynthesis1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=ps1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Photosynthesis 1
-execute if entity @s[tag=Photosynthesis1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Photosynthesis I","color":"dark_green","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Photosynthesis1_temp] run tag @s add Photosynthesis1
-execute if entity @s[tag=Photosynthesis1_temp,tag=Photosynthesis1] run xp add @s -450
+tellraw @s[tag=ps1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Photosynthesis I","color":"dark_green","bold":true},{"text":"!"}]
+tag @s[tag=ps1_temp] add Photosynthesis1
+xp add @s[tag=ps1_temp,tag=Photosynthesis1] -300
 
 #Remove CheckTags
-tag @s[tag=Photosynthesis1_T1AO] remove Photosynthesis1_T1AO
-tag @s[tag=Photosynthesis1_T2AO] remove Photosynthesis1_T2AO
-tag @s[tag=Photosynthesis1_NEXp] remove Photosynthesis1_NEXp
-tag @s[tag=Photosynthesis1_temp] remove Photosynthesis1_temp
+tag @s[tag=ps1_T1AO] remove ps1_T1AO
+tag @s[tag=ps1_T2AO] remove ps1_T2AO
+tag @s[tag=ps1_NEXp] remove ps1_NEXp
+tag @s[tag=ps1_temp] remove ps1_temp
 scoreboard players set @s Photosynthesis1 0

@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Cyclone1] run tag @s add Cyclone1_T1AO
-execute if entity @s[tag=Cyclone2] run tag @s add Cyclone1_T2AO
-execute if score @s[tag=!Cyclone1_T1AO,tag=!Cyclone1_T2AO] xp < t4 xp run tag @s add Cyclone1_NEXp
-execute if entity @s[tag=!Cyclone1_T1AO,tag=!Cyclone1_T2AO,tag=!Cyclone1_NEXp] run tag @s add Cyclone1_temp
+tag @s[tag=Cyclone1] add cy1_T1AO
+tag @s[tag=Cyclone2] add cy1_T2AO
+execute if score @s[tag=!cy1_T1AO,tag=!cy1_T2AO] xp < t4 xp run tag @s add cy1_NEXp
+tag @s[tag=!cy1_T1AO,tag=!cy1_T2AO,tag=!cy1_NEXp] add cy1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Cyclone1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Cyclone I","color":"dark_red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Cyclone1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Cyclone II","color":"dark_red","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=cy1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Cyclone I","color":"dark_red","bold":true},{"text":"!"}]
+tellraw @s[tag=cy1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Cyclone II","color":"dark_red","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Cyclone1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=cy1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Cyclone 1
-execute if entity @s[tag=Cyclone1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Cyclone I","color":"dark_red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Cyclone1_temp] run tag @s add Cyclone1
-execute if entity @s[tag=Cyclone1_temp,tag=Cyclone1] run xp add @s -400
+tellraw @s[tag=cy1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Cyclone I","color":"dark_red","bold":true},{"text":"!"}]
+tag @s[tag=cy1_temp] add Cyclone1
+xp add @s[tag=cy1_temp,tag=Cyclone1] -500
 
 #Remove CheckTags
-tag @s[tag=Cyclone1_T1AO] remove Cyclone1_T1AO
-tag @s[tag=Cyclone1_T2AO] remove Cyclone1_T2AO
-tag @s[tag=Cyclone1_NEXp] remove Cyclone1_NEXp
-tag @s[tag=Cyclone1_temp] remove Cyclone1_temp
+tag @s[tag=cy1_T1AO] remove cy1_T1AO
+tag @s[tag=cy1_T2AO] remove cy1_T2AO
+tag @s[tag=cy1_NEXp] remove cy1_NEXp
+tag @s[tag=cy1_temp] remove cy1_temp
 scoreboard players set @s Cyclone1 0

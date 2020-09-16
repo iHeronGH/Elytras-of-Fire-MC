@@ -1,31 +1,27 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Permafrost1] run tag @s add Permafrost2_T1AO
-execute if entity @s[tag=Permafrost2] run tag @s add Permafrost2_T2AO
-execute if score @s[tag=Permafrost2_T1AO,tag=!Permafrost2_T2AO] xp < t2 xp run tag @s add Permafrost2_NEXp
-execute if entity @s[tag=Permafrost2_T1AO,tag=!Permafrost2_T2AO,tag=!Permafrost2_NEXp] run tag @s add Permafrost2_temp
+tag @s[tag=Permafrost1] add pf2_T1AO
+tag @s[tag=Permafrost2] add pf2_T2AO
+execute if score @s[tag=pf2_T1AO,tag=!pf2_T2AO] xp < t2 xp run tag @s add pf2_NEXp
+tag @s[tag=pf2_T1AO,tag=!pf2_T2AO,tag=!pf2_NEXp] add pf2_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Permafrost2_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=pf2_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Permafrost2_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=pf2_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!"}]
 
 #Announce Buy Previous Tier
-execute if entity @s[tag=!Permafrost2_T1AO,tag=!Permafrost2_T2AO] run tellraw @s [{"text":"You must buy the previous upgrade in order to purchase this!","color":"gray"}]
+tellraw @s[tag=!pf2_T1AO,tag=!pf2_T2AO] [{"text":"You must buy the previous upgrade in order to purchase this!","color":"gray"}]
 
 #Purchase Permafrost 2
-execute if entity @s[tag=Permafrost2_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Permafrost2_temp] run tag @s add Permafrost2
-execute if entity @s[tag=Permafrost2_temp,tag=Permafrost2] run xp add @s -450
-execute if entity @s[tag=Permafrost2_temp,tag=Permafrost2] run tag @s remove Permafrost1
+tellraw @s[tag=pf2_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Permafrost II","color":"aqua","bold":true},{"text":"!"}]
+tag @s[tag=pf2_temp] add Permafrost2
+xp add @s[tag=pf2_temp,tag=Permafrost2] -450
+tag @s[tag=pf2_temp,tag=Permafrost2] remove Permafrost1
 
 #Remove CheckTags
-tag @s[tag=Permafrost2_T1AO] remove Permafrost2_T1AO
-tag @s[tag=Permafrost2_T2AO] remove Permafrost2_T2AO
-tag @s[tag=Permafrost2_NEXp] remove Permafrost2_NEXp
-tag @s[tag=Permafrost2_temp] remove Permafrost2_temp
+tag @s[tag=pf2_T1AO] remove pf2_T1AO
+tag @s[tag=pf2_T2AO] remove pf2_T2AO
+tag @s[tag=pf2_NEXp] remove pf2_NEXp
+tag @s[tag=pf2_temp] remove pf2_temp
 scoreboard players set @s Permafrost2 0

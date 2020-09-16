@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=HighWinds1] run tag @s add HighWinds1_T1AO
-execute if entity @s[tag=HighWinds2] run tag @s add HighWinds1_T2AO
-execute if score @s[tag=!HighWinds1_T1AO,tag=!HighWinds1_T2AO] xp < t4 xp run tag @s add HighWinds1_NEXp
-execute if entity @s[tag=!HighWinds1_T1AO,tag=!HighWinds1_T2AO,tag=!HighWinds1_NEXp] run tag @s add HighWinds1_temp
+tag @s[tag=HighWinds1] add hw1_T1AO
+tag @s[tag=HighWinds2] add hw1_T2AO
+execute if score @s[tag=!hw1_T1AO,tag=!hw1_T2AO] xp < t1 xp run tag @s add hw1_NEXp
+tag @s[tag=!hw1_T1AO,tag=!hw1_T2AO,tag=!hw1_NEXp] add hw1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=HighWinds1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"High Winds I","color":"yellow","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=HighWinds1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"High Winds II","color":"yellow","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=hw1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"High Winds I","color":"yellow","bold":true},{"text":"!"}]
+tellraw @s[tag=hw1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"High Winds II","color":"yellow","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=HighWinds1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=hw1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase HighWinds 1
-execute if entity @s[tag=HighWinds1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"High Winds I","color":"yellow","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=HighWinds1_temp] run tag @s add HighWinds1
-execute if entity @s[tag=HighWinds1_temp,tag=HighWinds1] run xp add @s -400
+tellraw @s[tag=hw1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"High Winds I","color":"yellow","bold":true},{"text":"!"}]
+tag @s[tag=hw1_temp] add HighWinds1
+xp add @s[tag=hw1_temp,tag=HighWinds1] -300
 
 #Remove CheckTags
-tag @s[tag=HighWinds1_T1AO] remove HighWinds1_T1AO
-tag @s[tag=HighWinds1_T2AO] remove HighWinds1_T2AO
-tag @s[tag=HighWinds1_NEXp] remove HighWinds1_NEXp
-tag @s[tag=HighWinds1_temp] remove HighWinds1_temp
+tag @s[tag=hw1_T1AO] remove hw1_T1AO
+tag @s[tag=hw1_T2AO] remove hw1_T2AO
+tag @s[tag=hw1_NEXp] remove hw1_NEXp
+tag @s[tag=hw1_temp] remove hw1_temp
 scoreboard players set @s HighWinds1 0

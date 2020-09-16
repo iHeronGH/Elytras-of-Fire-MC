@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Amphibious1] run tag @s add Amphibious1_T1AO
-execute if entity @s[tag=Amphibious2] run tag @s add Amphibious1_T2AO
-execute if score @s[tag=!Amphibious1_T1AO,tag=!Amphibious1_T2AO] xp < t5 xp run tag @s add Amphibious1_NEXp
-execute if entity @s[tag=!Amphibious1_T1AO,tag=!Amphibious1_T2AO,tag=!Amphibious1_NEXp] run tag @s add Amphibious1_temp
+tag @s[tag=Amphibious1] add am1_T1AO
+tag @s[tag=Amphibious2] add am1_T2AO
+execute if score @s[tag=!am1_T1AO,tag=!am1_T2AO] xp < t4 xp run tag @s add am1_NEXp
+tag @s[tag=!am1_T1AO,tag=!am1_T2AO,tag=!am1_NEXp] add am1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Amphibious1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Amphibious I","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Amphibious1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Amphibious II","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=am1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Amphibious I","color":"dark_aqua","bold":true},{"text":"!"}]
+tellraw @s[tag=am1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Amphibious II","color":"dark_aqua","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Amphibious1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=am1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Amphibious 1
-execute if entity @s[tag=Amphibious1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Amphibious I","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Amphibious1_temp] run tag @s add Amphibious1
-execute if entity @s[tag=Amphibious1_temp,tag=Amphibious1] run xp add @s -400
+tellraw @s[tag=am1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Amphibious I","color":"dark_aqua","bold":true},{"text":"!"}]
+tag @s[tag=am1_temp] add Amphibious1
+xp add @s[tag=am1_temp,tag=Amphibious1] -500
 
 #Remove CheckTags
-tag @s[tag=Amphibious1_T1AO] remove Amphibious1_T1AO
-tag @s[tag=Amphibious1_T2AO] remove Amphibious1_T2AO
-tag @s[tag=Amphibious1_NEXp] remove Amphibious1_NEXp
-tag @s[tag=Amphibious1_temp] remove Amphibious1_temp
+tag @s[tag=am1_T1AO] remove am1_T1AO
+tag @s[tag=am1_T2AO] remove am1_T2AO
+tag @s[tag=am1_NEXp] remove am1_NEXp
+tag @s[tag=am1_temp] remove am1_temp
 scoreboard players set @s Amphibious1 0

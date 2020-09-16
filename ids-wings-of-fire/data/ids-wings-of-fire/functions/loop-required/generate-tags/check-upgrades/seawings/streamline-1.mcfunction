@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Streamline1] run tag @s add Streamline1_T1AO
-execute if entity @s[tag=Streamline2] run tag @s add Streamline1_T2AO
-execute if score @s[tag=!Streamline1_T1AO,tag=!Streamline1_T2AO] xp < t4 xp run tag @s add Streamline1_NEXp
-execute if entity @s[tag=!Streamline1,tag=!Streamline2,tag=!Streamline1_T1AO,tag=!Streamline1_T2AO,tag=!Streamline1_NEXp] run tag @s add Streamline1_temp
+tag @s[tag=Streamline1] add sl1_T1AO
+tag @s[tag=Streamline2] add sl1_T2AO
+execute if score @s[tag=!sl1_T1AO,tag=!sl1_T2AO] xp < t1 xp run tag @s add sl1_NEXp
+tag @s[tag=!Streamline1,tag=!Streamline2,tag=!sl1_T1AO,tag=!sl1_T2AO,tag=!sl1_NEXp] add sl1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Streamline1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Streamline I","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Streamline1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Streamline II","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=sl1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Streamline I","color":"dark_aqua","bold":true},{"text":"!"}]
+tellraw @s[tag=sl1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Streamline II","color":"dark_aqua","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Streamline1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=sl1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Streamline 1
-execute if entity @s[tag=Streamline1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Streamline I","color":"dark_aqua","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Streamline1_temp] run tag @s add Streamline1
-execute if entity @s[tag=Streamline1_temp,tag=Streamline1] run xp add @s -400
+tellraw @s[tag=sl1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Streamline I","color":"dark_aqua","bold":true},{"text":"!"}]
+tag @s[tag=sl1_temp] add Streamline1
+xp add @s[tag=sl1_temp,tag=Streamline1] -300
 
 #Remove CheckTags
-tag @s[tag=Streamline1_T1AO] remove Streamline1_T1AO
-tag @s[tag=Streamline1_T2AO] remove Streamline1_T2AO
-tag @s[tag=Streamline1_NEXp] remove Streamline1_NEXp
-tag @s[tag=Streamline1_temp] remove Streamline1_temp
+tag @s[tag=sl1_T1AO] remove sl1_T1AO
+tag @s[tag=sl1_T2AO] remove sl1_T2AO
+tag @s[tag=sl1_NEXp] remove sl1_NEXp
+tag @s[tag=sl1_temp] remove sl1_temp
 scoreboard players set @s Streamline1 0

@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Announce Warning
 tellraw @s[tag=!Activator,tag=Dragon,nbt=!{Health:0f}] {"text":"Do not attempt to duplicate items.","color":"red","bold":true}
 

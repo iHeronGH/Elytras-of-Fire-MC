@@ -1,25 +1,21 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Fission1] run tag @s add Fission_T1AO
-execute if score @s[tag=!Fission_T1AO] xp < t3 xp run tag @s add Fission_NEXp
-execute if entity @s[tag=!Fission1,tag=!Fission_T1AO,tag=!Fission_NEXp] run tag @s add Fission_temp
+tag @s[tag=Fission1] add fi1_T1AO
+execute if score @s[tag=!fi1_T1AO] xp < t3 xp run tag @s add fi1_NEXp
+tag @s[tag=!Fission1,tag=!fi1_T1AO,tag=!fi1_NEXp] add fi1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Fission_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Fission I","color":"red","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=fi1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Fission I","color":"red","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Fission_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=fi1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Fission 1
-execute if entity @s[tag=Fission_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Fission I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Fission_temp] run tag @s add Fission1
-execute if entity @s[tag=Fission_temp,tag=Fission1] run xp add @s -900
+tellraw @s[tag=fi1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Fission I","color":"red","bold":true},{"text":"!"}]
+tag @s[tag=fi1_temp] add Fission1
+xp add @s[tag=fi1_temp,tag=Fission1] -900
 
 #Remove CheckTags
-tag @s[tag=Fission_T1AO] remove Fission_T1AO
-tag @s[tag=Fission_NEXp] remove Fission_NEXp
-tag @s[tag=Fission_temp] remove Fission_temp
+tag @s[tag=fi1_T1AO] remove fi1_T1AO
+tag @s[tag=fi1_NEXp] remove fi1_NEXp
+tag @s[tag=fi1_temp] remove fi1_temp
 scoreboard players set @s Fission1 0

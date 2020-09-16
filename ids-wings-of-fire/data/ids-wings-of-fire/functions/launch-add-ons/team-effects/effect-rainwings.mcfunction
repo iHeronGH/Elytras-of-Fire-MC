@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Effect All RainWings
 function ids-wings-of-fire:launch-add-ons/team-effects/entity-camo
 effect give @a[team=RainWings] jump_boost 1 0 true

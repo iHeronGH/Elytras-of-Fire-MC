@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Effect All IceWings
 effect give @a[team=IceWings] strength 1 1 true
 effect clear @a[team=IceWings,tag=nv] night_vision

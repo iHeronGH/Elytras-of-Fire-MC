@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=EternalFlame1] run tag @s add EternalFlame1_T1AO
-execute if entity @s[tag=EternalFlame2] run tag @s add EternalFlame1_T2AO
-execute if score @s[tag=!EternalFlame1_T1AO,tag=!EternalFlame1_T2AO] xp < t2 xp run tag @s add EternalFlame1_NEXp
-execute if entity @s[tag=!EternalFlame1_T1AO,tag=!EternalFlame1_T2AO,tag=!EternalFlame1_NEXp] run tag @s add EternalFlame1_temp
+tag @s[tag=EternalFlame1] add ef1_T1AO
+tag @s[tag=EternalFlame2] add ef1_T2AO
+execute if score @s[tag=!ef1_T1AO,tag=!ef1_T2AO] xp < t2 xp run tag @s add ef1_NEXp
+tag @s[tag=!ef1_T1AO,tag=!ef1_T2AO,tag=!ef1_NEXp] add ef1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=EternalFlame1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"EternalFlame I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=EternalFlame1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"EternalFlame II","color":"red","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=ef1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"EternalFlame I","color":"red","bold":true},{"text":"!"}]
+tellraw @s[tag=ef1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"EternalFlame II","color":"red","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=EternalFlame1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=ef1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase EternalFlame 1
-execute if entity @s[tag=EternalFlame1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"EternalFlame I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=EternalFlame1_temp] run tag @s add EternalFlame1
-execute if entity @s[tag=EternalFlame1_temp,tag=EternalFlame1] run xp add @s -450
+tellraw @s[tag=ef1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"EternalFlame I","color":"red","bold":true},{"text":"!"}]
+tag @s[tag=ef1_temp] add EternalFlame1
+xp add @s[tag=ef1_temp,tag=EternalFlame1] -450
 
 #Remove CheckTags
-tag @s[tag=EternalFlame1_T1AO] remove EternalFlame1_T1AO
-tag @s[tag=EternalFlame1_T2AO] remove EternalFlame1_T2AO
-tag @s[tag=EternalFlame1_NEXp] remove EternalFlame1_NEXp
-tag @s[tag=EternalFlame1_temp] remove EternalFlame1_temp
+tag @s[tag=ef1_T1AO] remove ef1_T1AO
+tag @s[tag=ef1_T2AO] remove ef1_T2AO
+tag @s[tag=ef1_NEXp] remove ef1_NEXp
+tag @s[tag=ef1_temp] remove ef1_temp
 scoreboard players set @s EternalFlame1 0

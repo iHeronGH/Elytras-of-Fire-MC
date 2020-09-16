@@ -1,31 +1,27 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Oxygenate1] run tag @s add Oxygenate1_T1AO
-execute if entity @s[tag=Oxygenate2] run tag @s add Oxygenate1_T2AO
-execute if entity @s[tag=Oxygenate3] run tag @s add Oxygenate1_T3AO
-execute if score @s[tag=!Oxygenate1_T1AO,tag=!Oxygenate1_T2AO,tag=!Oxygenate1_T3AO] xp < t1 xp run tag @s add Oxygenate1_NEXp
-execute if entity @s[tag=!Oxygenate1_T1AO,tag=!Oxygenate1_T2AO,tag=!Oxygenate1_T3AO,tag=!Oxygenate1_NEXp] run tag @s add Oxygenate1_temp
+tag @s[tag=Oxygenate1] add ox1_T1AO
+tag @s[tag=Oxygenate2] add ox1_T2AO
+tag @s[tag=Oxygenate3] add ox1_T3AO
+execute if score @s[tag=!ox1_T1AO,tag=!ox1_T2AO,tag=!ox1_T3AO] xp < t1 xp run tag @s add ox1_NEXp
+tag @s[tag=!ox1_T1AO,tag=!ox1_T2AO,tag=!ox1_T3AO,tag=!ox1_NEXp] add ox1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Oxygenate1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Oxygenate I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Oxygenate1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Oxygenate1_T3AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Oxygenate III","color":"red","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=ox1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Oxygenate I","color":"red","bold":true},{"text":"!"}]
+tellraw @s[tag=ox1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Oxygenate II","color":"red","bold":true},{"text":"!"}]
+tellraw @s[tag=ox1_T3AO] [{"text":"You already own ","color":"gray"},{"text":"Oxygenate III","color":"red","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Oxygenate1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=ox1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Oxygenate 1
-execute if entity @s[tag=Oxygenate1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Oxygenate I","color":"red","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Oxygenate1_temp] run tag @s add Oxygenate1
-execute if entity @s[tag=Oxygenate1_temp,tag=Oxygenate1] run xp add @s -300
+tellraw @s[tag=ox1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Oxygenate I","color":"red","bold":true},{"text":"!"}]
+tag @s[tag=ox1_temp] add Oxygenate1
+xp add @s[tag=ox1_temp,tag=Oxygenate1] -300
 
 #Remove CheckTags
-tag @s[tag=Oxygenate1_T1AO] remove Oxygenate1_T1AO
-tag @s[tag=Oxygenate1_T2AO] remove Oxygenate1_T2AO
-tag @s[tag=Oxygenate1_T3AO] remove Oxygenate1_T3AO
-tag @s[tag=Oxygenate1_NEXp] remove Oxygenate1_NEXp
-tag @s[tag=Oxygenate1_temp] remove Oxygenate1_temp
+tag @s[tag=ox1_T1AO] remove ox1_T1AO
+tag @s[tag=ox1_T2AO] remove ox1_T2AO
+tag @s[tag=ox1_T3AO] remove ox1_T3AO
+tag @s[tag=ox1_NEXp] remove ox1_NEXp
+tag @s[tag=ox1_temp] remove ox1_temp
 scoreboard players set @s Oxygenate1 0

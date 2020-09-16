@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Generate Scoreboard
 
 	#Essential Scoreboard
@@ -47,8 +43,7 @@ scoreboard objectives add xp dummy
 scoreboard players set t1 xp 300
 scoreboard players set t2 xp 450
 scoreboard players set t3 xp 900
-scoreboard players set t4 xp 400
-scoreboard players set t5 xp 800
+scoreboard players set t4 xp 500
 
 	#Timer Scoreboard
 scoreboard objectives add timer dummy
@@ -58,6 +53,7 @@ scoreboard players set min timer 0
 scoreboard players set hour timer 0
 
 	#Upgrade Scoreboard
+		#IceWings
 scoreboard objectives add ArcticCore1 trigger
 scoreboard objectives add ArcticCore2 trigger
 scoreboard objectives add ArcticCore3 trigger
@@ -68,7 +64,7 @@ scoreboard objectives add FreezingPoint1 trigger
 scoreboard objectives add FreezingPoint2 trigger
 scoreboard objectives add Chill1 trigger
 scoreboard objectives add Chill2 trigger
-
+		#MudWings
 scoreboard objectives add Furnace1 trigger
 scoreboard objectives add Furnace2 trigger
 scoreboard objectives add Furnace3 trigger
@@ -79,7 +75,7 @@ scoreboard objectives add Tremors1 trigger
 scoreboard objectives add Tremors2 trigger
 scoreboard objectives add Aftershock1 trigger
 scoreboard objectives add Aftershock2 trigger
-
+		#NightWings
 scoreboard objectives add Superheat1 trigger
 scoreboard objectives add Superheat2 trigger
 scoreboard objectives add Superheat3 trigger
@@ -90,7 +86,7 @@ scoreboard objectives add Corruption1 trigger
 scoreboard objectives add Corruption2 trigger
 scoreboard objectives add Blackout1 trigger
 scoreboard objectives add Blackout2 trigger
-
+		#RainWings
 scoreboard objectives add Reaction1 trigger
 scoreboard objectives add Reaction2 trigger
 scoreboard objectives add Reaction3 trigger
@@ -101,7 +97,7 @@ scoreboard objectives add Photosynthesis1 trigger
 scoreboard objectives add Photosynthesis2 trigger
 scoreboard objectives add NaturesWrath1 trigger
 scoreboard objectives add NaturesWrath2 trigger
-
+		#SandWings
 scoreboard objectives add Scorch1 trigger
 scoreboard objectives add Scorch2 trigger
 scoreboard objectives add Scorch3 trigger
@@ -112,7 +108,7 @@ scoreboard objectives add HighWinds1 trigger
 scoreboard objectives add HighWinds2 trigger
 scoreboard objectives add Drought1 trigger
 scoreboard objectives add Drought2 trigger
-
+		#SeaWings
 scoreboard objectives add HighTide1 trigger
 scoreboard objectives add HighTide2 trigger
 scoreboard objectives add HighTide3 trigger
@@ -123,7 +119,7 @@ scoreboard objectives add Streamline1 trigger
 scoreboard objectives add Streamline2 trigger
 scoreboard objectives add Amphibious1 trigger
 scoreboard objectives add Amphibious2 trigger
-
+		#SkyWings
 scoreboard objectives add Oxygenate1 trigger
 scoreboard objectives add Oxygenate2 trigger
 scoreboard objectives add Oxygenate3 trigger

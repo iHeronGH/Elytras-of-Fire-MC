@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Effect All MudWings
 effect give @a[team=MudWings] strength 1 1 true
 effect give @a[team=MudWings] slowness 1 0 true

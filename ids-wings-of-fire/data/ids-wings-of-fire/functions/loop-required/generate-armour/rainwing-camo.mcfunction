@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Detect Block/Family & Change Armour
 
 	#Families
@@ -20,4 +16,3 @@ execute unless score @s legsCol = @s feetCol run tag @s add matchLegs
 execute unless score @s chestCol = @s feetCol run tag @s add matchChest
 execute unless score @s headCol = @s feetCol run tag @s add matchHead
 execute unless entity @s[tag=!matchLegs,tag=!matchChest,tag=!matchHead] run function ids-wings-of-fire:loop-required/generate-armour/match-rainwing-scales
-function ids-wings-of-fire:loop-required/camo-effect

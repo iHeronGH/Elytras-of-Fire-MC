@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Ready Flame Breath
 execute if entity @s[predicate=ids-wings-of-fire:detect-sneak,nbt=!{Inventory:[{Slot:-106b}]},nbt={SelectedItem:{tag:{flamebreath:1}}}] run replaceitem entity @s weapon.offhand carrot_on_a_stick{CustomModelData:1,flameactivate:1,activator:1}
 execute if entity @s[nbt=!{SelectedItem:{tag:{flamebreath:1}}},nbt={Inventory:[{tag:{flameactivate:1}}]}] run clear @s carrot_on_a_stick{flameactivate:1}

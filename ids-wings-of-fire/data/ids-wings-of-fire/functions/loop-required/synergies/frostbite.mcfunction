@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Increment Time
 execute as @e[tag=hasFrost1] run scoreboard players add @s hasFrost 1
 execute as @e[tag=hasFrost2] run scoreboard players add @s hasFrost 1

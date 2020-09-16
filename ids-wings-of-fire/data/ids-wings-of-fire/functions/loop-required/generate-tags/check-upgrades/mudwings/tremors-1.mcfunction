@@ -1,28 +1,24 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Add CheckTags
-execute if entity @s[tag=Tremors1] run tag @s add Tremors1_T1AO
-execute if entity @s[tag=Tremors2] run tag @s add Tremors1_T2AO
-execute if score @s[tag=!Tremors1_T1AO,tag=!Tremors1_T2AO] xp < t4 xp run tag @s add Tremors1_NEXp
-execute if entity @s[tag=!Tremors1_T1AO,tag=!Tremors1_T2AO,tag=!Tremors1_NEXp] run tag @s add Tremors1_temp
+tag @s[tag=Tremors1] add tr1_T1AO
+tag @s[tag=Tremors2] add tr1_T2AO
+execute if score @s[tag=!tr1_T1AO,tag=!tr1_T2AO] xp < t1 xp run tag @s add tr1_NEXp
+tag @s[tag=!tr1_T1AO,tag=!tr1_T2AO,tag=!tr1_NEXp] add tr1_temp
 
 #Announce Tier Already Owned
-execute if entity @s[tag=Tremors1_T1AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Tremors I","color":"gold","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Tremors1_T2AO] run tellraw @s [{"text":"You already own ","color":"gray"},{"text":"Tremors II","color":"gold","bold":true},{"text":"!","color":"gray"}]
+tellraw @s[tag=tr1_T1AO] [{"text":"You already own ","color":"gray"},{"text":"Tremors I","color":"gold","bold":true},{"text":"!"}]
+tellraw @s[tag=tr1_T2AO] [{"text":"You already own ","color":"gray"},{"text":"Tremors II","color":"gold","bold":true},{"text":"!"}]
 
 #Announce Not Enough XP
-execute if entity @s[tag=Tremors1_NEXp] run tellraw @s [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
+tellraw @s[tag=tr1_NEXp] [{"text":"You don't have enough XP to purchase this upgrade!","color":"gray"}]
 
 #Purchase Tremors 1
-execute if entity @s[tag=Tremors1_temp] run tellraw @s [{"text":"You have successfully purchased ","color":"gray"},{"text":"Tremors I","color":"gold","bold":true},{"text":"!","color":"gray"}]
-execute if entity @s[tag=Tremors1_temp] run tag @s add Tremors1
-execute if entity @s[tag=Tremors1_temp,tag=Tremors1] run xp add @s -400
+tellraw @s[tag=tr1_temp] [{"text":"You have successfully purchased ","color":"gray"},{"text":"Tremors I","color":"gold","bold":true},{"text":"!"}]
+tag @s[tag=tr1_temp] add Tremors1
+xp add @s[tag=tr1_temp,tag=Tremors1] -300
 
 #Remove CheckTags
-tag @s[tag=Tremors1_T1AO] remove Tremors1_T1AO
-tag @s[tag=Tremors1_T2AO] remove Tremors1_T2AO
-tag @s[tag=Tremors1_NEXp] remove Tremors1_NEXp
-tag @s[tag=Tremors1_temp] remove Tremors1_temp
+tag @s[tag=tr1_T1AO] remove tr1_T1AO
+tag @s[tag=tr1_T2AO] remove tr1_T2AO
+tag @s[tag=tr1_NEXp] remove tr1_NEXp
+tag @s[tag=tr1_temp] remove tr1_temp
 scoreboard players set @s Tremors1 0

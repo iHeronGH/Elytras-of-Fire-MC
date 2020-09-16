@@ -1,7 +1,3 @@
-#Wings of Fire Datapack for Minecraft Java 1.15.X
-#Created by iDinoSoul
-#My YouTube: https://www.youtube.com/channel/UCsABLqAUwZ2WzULSkKvSU5w
-
 #Delete All Tags
 tag @e[type=player,tag=Pyre] remove Pyre
 tag @e[type=player,tag=Perma] remove Perma
