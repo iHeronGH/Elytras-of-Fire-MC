@@ -1,2 +1,2 @@
 #Hotbar 7 Venom Shot
-replaceitem entity @s[nbt=!{Inventory:[{Slot:6b,Count:1b,tag:{venomshot:1,primary:1,stock:1}}]}] hotbar.6 black_dye{CustomModelData:1,display:{Name:'{"text":"Venom Shot","color":"white","bold":true,"italic":false}',Lore:['{"text":"[Sneak] + [Use] to","color":"dark_gray"}','{"text":"activate Venom Shot!","color":"dark_gray"}']},venomshot:1,primary:1,stock:1}
+replaceitem entity @s[nbt=!{Inventory:[{Slot:6b,Count:1b,tag:{venomshot:1,primary:1,stock:1}}]}] hotbar.6 black_dye{CustomModelData:1,display:{Name:'{"text":"Venom Shot","color":"white","bold":true,"italic":false}',Lore:['{"text":"[Sneak] + [Use] to","color":"dark_gray"}','{"text":"activate Venom Shot!","color":"dark_gray"}']},venomshot:1,primary:1,stock:1} 1

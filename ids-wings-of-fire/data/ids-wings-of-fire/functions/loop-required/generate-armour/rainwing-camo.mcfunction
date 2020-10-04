@@ -5,7 +5,7 @@ execute if block ~ ~ ~ #ids-wings-of-fire:families/flat run function ids-wings-o
 execute unless block ~ ~ ~ #ids-wings-of-fire:families/flat run function ids-wings-of-fire:loop-required/generate-armour/camo-full
 
 	#Blocks
-execute unless block ~ ~ ~ #ids-wings-of-fire:families/flat if block ~ ~-0.45 ~ grass_block run replaceitem entity @s armor.feet leather_boots{display:{Name:'{"text":"RainWing Scales","color":"green","italic":false}',color:6990400},Unbreakable:1,HideFlags:63,Enchantments:[{id:"feather_falling",lvl:2},{id:"binding_curse",lvl:1},{id:"vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"armour",Slot:"feet",Amount:5,Operation:0,UUIDMost:76959,UUIDLeast:152955},{AttributeName:"generic.armorToughness",Name:"toughness",Slot:"feet",Amount:4,Operation:0,UUIDMost:37047,UUIDLeast:143229}],rainarmor:1,tribearmor:1} 1
+execute unless block ~ ~ ~ #ids-wings-of-fire:families/flat if block ~ ~-0.45 ~ grass_block run replaceitem entity @s armor.feet leather_boots{display:{Name:'{"text":"RainWing Scales","color":"green","italic":false}',color:6990400},HideFlags:63,Unbreakable:1b,rainarmor:1,tribearmor:1,Enchantments:[{id:"minecraft:feather_falling",lvl:2s},{id:"minecraft:binding_curse",lvl:1s},{id:"minecraft:vanishing_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"armour",Amount:5,Operation:0,UUID:[I;-1544192295,1443512999,-1245704497,-1923544039],Slot:"feet"},{AttributeName:"generic.armor_toughness",Name:"toughness",Amount:4,Operation:0,UUID:[I;1492345086,625558052,-2088986731,1387130906],Slot:"feet"}]} 1
 
 	#RW Armour
 execute store result score @s feetCol run data get entity @s Inventory[{Slot:100b}].tag.display.color
