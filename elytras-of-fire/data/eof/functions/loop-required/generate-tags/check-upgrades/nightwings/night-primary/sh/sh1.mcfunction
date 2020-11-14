@@ -1,0 +1,6 @@
+execute as @p[distance=0,tag=Superheat1,tag=!EternalFlame1,tag=!EternalFlame2,tag=!Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/mono/cooldown1
+execute as @p[distance=0,tag=Superheat1,tag=EternalFlame1,tag=!Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/duo/cooldown1-emberlinger1
+execute as @p[distance=0,tag=Superheat1,tag=EternalFlame2,tag=!Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/duo/cooldown1-emberlinger2
+execute as @p[distance=0,tag=Superheat1,tag=!EternalFlame1,tag=!EternalFlame2,tag=Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/duo/cooldown1-areainc1
+execute as @p[distance=0,tag=Superheat1,tag=EternalFlame1,tag=Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/trio/cooldown1-emberlinger1-areainc1
+execute as @p[distance=0,tag=Superheat1,tag=EternalFlame2,tag=Fission1] run function eof:loop-required/generate-hotbars/nightwings/upgraded-abilities/flame-breath/trio/cooldown1-emberlinger2-areainc1

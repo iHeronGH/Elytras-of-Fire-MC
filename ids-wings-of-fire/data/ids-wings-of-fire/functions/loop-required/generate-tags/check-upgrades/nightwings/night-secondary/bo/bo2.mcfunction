@@ -1,1 +1,0 @@
-execute as @p[distance=0,tag=!Corruption1,tag=!Corruption2,tag=Blackout2] run function ids-wings-of-fire:loop-required/generate-hotbars/nightwings/upgraded-abilities/shade-shackle/mono/radius2

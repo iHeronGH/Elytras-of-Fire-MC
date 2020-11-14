@@ -1,0 +1,1 @@
+execute as @p[distance=0,tag=!Photosynthesis1,tag=!Photosynthesis2,tag=NaturesWrath2] run function eof:loop-required/generate-hotbars/rainwings/upgraded-abilities/overgrowth/mono/duration2

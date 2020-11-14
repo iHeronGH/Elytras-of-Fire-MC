@@ -1,0 +1,2 @@
+execute as @p[distance=0,tag=!Furnace1,tag=!Furnace2,tag=!Furnace3,tag=Everburn2,tag=!Inferno1] run function eof:loop-required/generate-hotbars/mudwings/upgraded-abilities/flame-breath/mono/emberlinger2
+execute as @p[distance=0,tag=!Furnace1,tag=!Furnace2,tag=!Furnace3,tag=Everburn2,tag=Inferno1] run function eof:loop-required/generate-hotbars/mudwings/upgraded-abilities/flame-breath/duo/emberlinger2-areainc1

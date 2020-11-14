@@ -1,0 +1,3 @@
+execute as @p[distance=0,tag=HighWinds1,tag=!Drought1,tag=!Drought2] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/desert-storm/mono/cooldown1
+execute as @p[distance=0,tag=HighWinds1,tag=Drought1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/desert-storm/duo/cooldown1-duration1
+execute as @p[distance=0,tag=HighWinds1,tag=Drought2] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/desert-storm/duo/cooldown1-duration2

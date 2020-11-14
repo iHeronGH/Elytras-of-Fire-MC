@@ -1,2 +1,0 @@
-execute as @p[distance=0,tag=!HighTide1,tag=!HighTide2,tag=!HighTide3,tag=Waterlogged2,tag=!Torrent1] run function ids-wings-of-fire:loop-required/generate-hotbars/seawings/upgraded-abilities/tidal-wave/mono/effectlinger2
-execute as @p[distance=0,tag=!HighTide1,tag=!HighTide2,tag=!HighTide3,tag=Waterlogged2,tag=Torrent1] run function ids-wings-of-fire:loop-required/generate-hotbars/seawings/upgraded-abilities/tidal-wave/duo/effectlinger2-rangeinc1

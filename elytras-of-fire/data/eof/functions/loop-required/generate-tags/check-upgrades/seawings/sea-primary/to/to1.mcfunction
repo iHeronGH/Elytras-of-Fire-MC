@@ -1,0 +1,1 @@
+execute as @p[distance=0,tag=!HighTide1,tag=!HighTide2,tag=!HighTide3,tag=!Waterlogged1,tag=!Waterlogged2,tag=Torrent1] run function eof:loop-required/generate-hotbars/seawings/upgraded-abilities/tidal-wave/mono/rangeinc1

@@ -1,0 +1,1 @@
+execute as @p[distance=0,tag=!Tremors1,tag=!Tremors2,tag=Aftershock1] run function eof:loop-required/generate-hotbars/mudwings/upgraded-abilities/terrashock/mono/duration1

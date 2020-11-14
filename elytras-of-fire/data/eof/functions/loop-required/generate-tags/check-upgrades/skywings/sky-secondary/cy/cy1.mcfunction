@@ -1,0 +1,1 @@
+execute as @p[distance=0,tag=!GaleForce1,tag=!GaleForce2,tag=Cyclone1] run function eof:loop-required/generate-hotbars/skywings/upgraded-abilities/sky-surge/mono/duration1

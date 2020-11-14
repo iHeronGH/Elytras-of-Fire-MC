@@ -1,0 +1,6 @@
+execute as @p[distance=0,tag=Scorch2,tag=!Dehydrate1,tag=!Dehydrate2,tag=!Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/mono/cooldown2
+execute as @p[distance=0,tag=Scorch2,tag=Dehydrate1,tag=!Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/duo/cooldown2-emberlinger1
+execute as @p[distance=0,tag=Scorch2,tag=Dehydrate2,tag=!Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/duo/cooldown2-emberlinger2
+execute as @p[distance=0,tag=Scorch2,tag=!Dehydrate1,tag=!Dehydrate2,tag=Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/duo/cooldown2-rangeinc1
+execute as @p[distance=0,tag=Scorch2,tag=Dehydrate1,tag=Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/trio/cooldown2-emberlinger1-rangeinc1
+execute as @p[distance=0,tag=Scorch2,tag=Dehydrate2,tag=Desolation1] run function eof:loop-required/generate-hotbars/sandwings/upgraded-abilities/flame-breath/trio/cooldown2-emberlinger2-rangeinc1
